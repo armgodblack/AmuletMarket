@@ -5,9 +5,9 @@ if(isset($_POST['submit'])){
     $sql = "select * from addshop where Name_Shop = '".trim($_POST['Name_Shop1'])."' ";
     $objQuery = mysql_query($sql);
     $objResult = mysql_fetch_array($objQuery);
+
     
         
-    
 if($objResult){
      echo "<script>alert('Sorry Not Save Successfully');</script>";
       
@@ -20,7 +20,7 @@ $Line1=$_POST=$_POST['Line1'];
 $Detail_Shop=$_POST['Detail_Shop'];
 $Detail_Amulet=$_POST['Detail_Amulet'];
 $Type_Amulet=$_POST['Type_Amulet'];
-$Picture_Shop=$_POST['file'];
+$Picture_Shop=$_POST['fileToUpload_name'];
 //$Pictrue_Amulet=$_POST['fileToUpload_name1'];
 //$Logo=$_POST['fileToUpload_name2'];
 }
@@ -54,7 +54,7 @@ else if(trim($_POST["Type_Amulet"]) == ""){
 }
 else {
     $sql = "INSERT INTO addShop (`Name_Shop`,`Name_Owner`,`Name_Amulet`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Detail_Amulet`,`Type_Amulet`,`Picture_Shop`)
-        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$Pictrue_Shop');";
+        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$fileToUpload_name');";
     $objQuery = mysql_query($sql);
     echo "<script>alert('Save Successfully.');</script>";
 }
@@ -78,7 +78,7 @@ mysql_close();
 </head>
 <body >
 
-    <form action="addShop.php" method="post">
+    <form action="saveImage.php" method="post" enctype="multipart/form-data">
 	<form class="form-addShop">
 		<div class="form-addShop">
                    
@@ -97,6 +97,12 @@ mysql_close();
                         <button type="submit" name="submit">Add</button>
 			</div>			
 	</form>
+        
+        <table width="400" boarder="1">
+            <tr>
+                <td><?php echo $objResult['$Picture_Shop'];?></td>
+            </tr>
+        </table>
         
 </body>
 </html>

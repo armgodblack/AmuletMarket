@@ -1,13 +1,6 @@
-<!--Rachen-->
-<!--Rachen-->
-<!--Rachen-->
-<!--Rachen-->
-<!--Rachen-->
-
-
 <?php
-include 'config.php';//Update by Rachen
-$query = "select * from addshop";//Update by Boss
+include 'config.php';
+$query = "select * from addshop";
 $objQuery = mysql_query($query) or die ("Error Query[".$query."]");
 
 ?>
@@ -21,24 +14,9 @@ $objQuery = mysql_query($query) or die ("Error Query[".$query."]");
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="addShop.php"> Add Shop </a>
-    
-<?php 
-    while($objResult = mysql_fetch_array($objQuery)){
-?>
-    
-<table width="600" border="1"> 
-<tr>
-    <td><?php  echo $objResult["Name_Shop"];?></td>
-    <td><?php  echo $objResult["Facebook"];?></td>
-</tr>
-   <?php
-    }
-    ?>
-</table> 
-<?php
-    mysql_close();
-?> 
+    <a href="addShop.php"> Add Shop </a><br>
+    <a href="addmarket.php"> Add Market </a>
+
     
     
 </body>

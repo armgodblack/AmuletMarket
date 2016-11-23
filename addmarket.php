@@ -1,3 +1,5 @@
+<!-- SAWATDEE -->
+
 <?php
 include 'config.php';
 

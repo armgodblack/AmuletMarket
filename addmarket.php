@@ -1,5 +1,6 @@
 <!-- SAWATDEE -->
 <!--Rachen-->
+<!-- BOSS -->
 <?php
 include 'config.php';
 

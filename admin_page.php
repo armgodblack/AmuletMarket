@@ -1,3 +1,8 @@
+<!--Rachen-->
+<!--Rachen-->
+<!--Rachen-->
+<!--Rachen-->
+
 <?php
 include 'config.php';//Update by Rachen
 $query = "select * from addshop";//Update by Boss

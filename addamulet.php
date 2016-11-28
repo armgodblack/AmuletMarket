@@ -2,24 +2,42 @@
 include 'config.php';
 
 
+if (isset($_POST['submit'])) {
+
+	$sql="select * from amulet where Name_Owner = '".trim($_POST['txtNameOwner'])."' ";
+	$objQuery=mysql_query($sql);
+	$objResult=mysql_fetch_array($objQuery);
+
+if ($objResult) {
+	echo "<script>alert('ชื่อเจ้าของมีอยู่ในระบบแล้ว');</script>";
 
 	$txtNameOwner=$_POST['txtNameOwner'];
 	$txtNameAmulet=$_POST['txtNameAmulet'];
 	$txtTypeAmulet=$_POST['txtTypeAmulet'];
 	$txtamuletdetail=$_POST['txtamuletdetail'];
-	$fontamulet=$_POST['fontamulet'];
-	$backamulet=$_POST['backamulet'];
+	$fontamuletfile=$_POST['$fontamuletfile'];
+	$backamuletfile=$_POST['$backamuletfile'];
 
 
+}
+else if (trim($_POST["txtNameAmulet"])=="") {
+	echo "<script>alert('กรุณากรอกชื่อพระเครื่อง');</script>";
+}
+else if (trim($_POST["txtamuletdetail"])=="") {
+	echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
+}
+else if (trim($_POST["txtNameOwner"])) {
+	echo "<script>alert('กรุณากรอกชื่อเจ้าของพระเครื่อง');</script>";
+}
+else{
+	$sql= "insert into amulet (Name_Owner, NameAmulet, TypeAmulet, DetailAmulet, FrontPicture, BackPicture)
+		values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$fontamuletfile','$backamuletfile')";
+	$objQuery = mysql_query($sql);
+		echo "<script>alert('Register successfully sent');</script>";
+}
 
-	$sql = "INSERT INTO amulet (`Name_Owner	`,`NameAmulet`,`TypeAmulet`,`DetailAmule`,`FrontPicture`,`BackPicture`)
-        Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail',$fontamulet','$backamulet');";
-    $objQuery = mysql_query($sql);
-    echo "<script>alert('Save Successfully.');</script>";
-
-
-
-
+}
+mysql_close();
 
 
 ?>
@@ -41,9 +59,9 @@ include 'config.php';
 
 				<input type="text" name="txtTypeAmulet" value="" id="txtTypeAmulet" placeholder="ประเภทพระเครื่อง" /><br>
 
-				Font Amulet<input type="file" value="" name="fontamulet" id="fontamulet"  name="imagefile" id="imagefile"/><br>
+				Font Amulet<input type="file" value="" name="fontamuletfile" id="fontamulet"  name="imagefile" id="imagefile"/><br>
 
-				Back Amulet <input type="file" value="" name="backamulet" id="backamulet" name="imagefile" id="imagefile"/><br>
+				Back Amulet <input type="file" value="" name="backamuletfile" id="backamulet" name="imagefile" id="imagefile"/><br>
 
 				<textarea class="txtamuletdetail" row="4" cols="50" placeholder="รายละเอียดพระเครื่อง" name="txtamuletdetail"></textarea><br>
 

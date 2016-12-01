@@ -20,7 +20,7 @@ $Line1=$_POST=$_POST['Line1'];
 $Detail_Shop=$_POST['Detail_Shop'];
 $Detail_Amulet=$_POST['Detail_Amulet'];
 $Type_Amulet=$_POST['Type_Amulet'];
-$Picture_Shop=$_POST['Picture_Shop_name'];
+$Picture_Shop=$_POST['Picture_Shop'];
 }
 
 else if(trim($_POST["Name_Shop1"]) == ""){
@@ -52,7 +52,7 @@ else if(trim($_POST["Type_Amulet"]) == ""){
 }
 else {
     $sql = "INSERT INTO addShop (`Name_Shop`,`Name_Owner`,`Name_Amulet`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Detail_Amulet`,`Type_Amulet`,`Picture_Shop`)
-        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$Picture_Shop_name');";
+        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$Picture_Shop');";
     $objQuery = mysql_query($sql);
     echo "<script>alert('Save Successfully.');</script>";
 }
@@ -93,6 +93,9 @@ mysql_close();
                         <button type="submit" name="submit">Add</button>
 			</div>			
 	</form>
+        
+        
+        
         
         
 </body>

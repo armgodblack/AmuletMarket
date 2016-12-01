@@ -8,7 +8,7 @@ $sql = "INSERT INTO addshop (`Name_Shop`,`Name_Owner`,`Name_Amulet`,`Phone`,`Fac
 
 if(mysql_query($sql)){header("location:addShop.php");
 
-$target_dir = "Imageshop/";
+$target_dir = "C:\AppServ\www\AmuletMarket\Images\Imageshop/";
 $target_file = $target_dir . basename($_FILES["Picture_Shop"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

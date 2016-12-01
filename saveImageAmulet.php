@@ -1,13 +1,14 @@
 <?php
 include 'config.php';
 
-$sql = "INSERT INTO amulet  (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`BackPicture`)
-        Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$FrontPicture','$BackPicture');";
+
+$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`)
+        Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$FrontPicture_name');";
 
 
 if(mysql_query($sql)){header("location:addamulet.php");
 
-$target_dir = "ImagesAmulet/";
+$target_dir = "C:\AppServ\www\AmuletMarket\Images\ImagesAmulet/";
 $target_file = $target_dir . basename($_FILES["FrontPicture"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

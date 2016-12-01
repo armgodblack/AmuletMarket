@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 		$txtTypeAmulet=$_POST['txtTypeAmulet'];
 		$txtamuletdetail=$_POST['txtamuletdetail'];
 		$FrontPicture=$_POST['$FrontPicture'];
-		$BackPicture=$_POST['$BackPicture'];
+//		$BackPicture=$_POST['$BackPicture'];
 
 
 	}
@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
 		echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
 	}
 	else{
-		$sql= "insert into amulet (Name_Owner, NameAmulet, TypeAmulet, DetailAmulet, FrontPicture, BackPicture)
-		values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$FrontPicture','$BackPicture')";
+		$sql= "insert into amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`)
+		values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$FrontPicture',)";
 
 		$objQuery = mysql_query($sql);
 		echo "<script>alert('Register successfully sent');</script>";
@@ -50,7 +50,7 @@ mysql_close();
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">	
 </head>
 <body>
-	<form action="saveImageAmulet.php" method="post">
+    <form action="saveImageAmulet.php" method="post" enctype="multipart/form-data">
 		<form class="form-addamulet">
 			<div class="form-addamulet">
 				<h2>Register Amulet</h2>
@@ -60,7 +60,7 @@ mysql_close();
 
 				Font Amulet<input type="file" value="" name="FrontPicture" id="FrontPicture"  /><br>
 
-				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br>
+<!--				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br>-->
 
 				<textarea class="txtamuletdetail" row="4" cols="50" placeholder="รายละเอียดพระเครื่อง" name="txtamuletdetail"></textarea><br>
 

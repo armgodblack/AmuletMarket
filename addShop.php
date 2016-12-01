@@ -20,9 +20,7 @@ $Line1=$_POST=$_POST['Line1'];
 $Detail_Shop=$_POST['Detail_Shop'];
 $Detail_Amulet=$_POST['Detail_Amulet'];
 $Type_Amulet=$_POST['Type_Amulet'];
-$Picture_Shop=$_POST['fileToUpload_name'];
-//$Pictrue_Amulet=$_POST['fileToUpload_name1'];
-//$Logo=$_POST['fileToUpload_name2'];
+$Picture_Shop=$_POST['Picture_Shop_name'];
 }
 
 else if(trim($_POST["Name_Shop1"]) == ""){
@@ -54,7 +52,7 @@ else if(trim($_POST["Type_Amulet"]) == ""){
 }
 else {
     $sql = "INSERT INTO addShop (`Name_Shop`,`Name_Owner`,`Name_Amulet`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Detail_Amulet`,`Type_Amulet`,`Picture_Shop`)
-        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$fileToUpload_name');";
+        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$Picture_Shop_name');";
     $objQuery = mysql_query($sql);
     echo "<script>alert('Save Successfully.');</script>";
 }
@@ -87,22 +85,15 @@ mysql_close();
                         <input type="text" value="" name="Name_Amulet" id="Name_Amulet" placeholder="name_amulet"/><br>
                         <input type="text" value="" name="Phone" id="Phone" placeholder="phone"/><br>
                         <input type="text" value="" name="Facebook" id="Facebook" placeholder="facebook"/><br>
-                        <input type="text" value="" name="Line" id="Line1" placeholder="line"/><br>
+                        <input type="text" value="" name="Line1" id="Line1" placeholder="line"/><br>
                         <textarea class="textareadetail" maxlength="200" value="" name="Detail_Shop" id="Detail_Shop" placeholder="detail_shop"></textarea><br>
                         <textarea class="textareadetail" maxlength="200" value="" name="Detail_Amulet" id="Detail_Amulet" placeholder="detail_amulet"></textarea><br>
                         <input type="text" value="" name="Type_Amulet" id="Type_Amulet" placeholder="type_amulet"/><br>
-                        <input type="file" value="" name="fileToUpload" id="fileToUpload" placeeholder="pictureshop"/><br>
-                        <input type="file" value="" name="Picture_Amulet" id="Picture_Shop" placeholder="pictureamulet" name="imagefile" id="imagefile"/><br>
-                        <input type="file" value="" name="Logo" id="Logo" placeholder="logo" name="imagefile" id="imagefile"/><br>
+                        <input type="file" value="" name="Picture_Shop" id="Picture_Shop" placeeholder="pictureshop"/><br>
                         <button type="submit" name="submit">Add</button>
 			</div>			
 	</form>
         
-        <table width="400" boarder="1">
-            <tr>
-                <td><?php echo $objResult['$Picture_Shop'];?></td>
-            </tr>
-        </table>
         
 </body>
 </html>

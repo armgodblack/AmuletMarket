@@ -1,9 +1,14 @@
 <?php
 include 'config.php';
+if(isset($_POST["submit"])) {
+    $Str_file = explode(".",$_FILES['FrontPicture']['name']);
+    $dateimage = substr(date("Ymdhisa"),0,14);
+    $newname = $dateimage.".".$Str_file['1'];
+    
+    $date = substr(date("Y-m-d h-i-sa"),0,19);
 
-
-$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`)
-        Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$FrontPicture_name');";
+$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`pd_date`)
+        Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$date');";
 
 
 if(mysql_query($sql)){header("location:addamulet.php");
@@ -13,7 +18,7 @@ $target_file = $target_dir . basename($_FILES["FrontPicture"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+
     $check = getimagesize($_FILES["FrontPicture"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
@@ -37,9 +42,13 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (copy($_FILES["FrontPicture"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["FrontPicture"]["name"]). " has been uploaded.";
-    } else {
+    $Str_file = explode(".",$_FILES['FrontPicture']['name']);
+    $dateimage = substr(date("Ymdhisa"),0,14);
+    $newname = $dateimage.".".$Str_file['1'];
+    
+    if (copy($_FILES["FrontPicture"]["tmp_name"], $target_dir. basename($newname))) {
+       
+    }else {
         echo "Sorry, there was an error uploading your file.";
     }
 }

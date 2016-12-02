@@ -21,6 +21,7 @@ $Detail_Shop=$_POST['Detail_Shop'];
 $Detail_Amulet=$_POST['Detail_Amulet'];
 $Type_Amulet=$_POST['Type_Amulet'];
 $Picture_Shop=$_POST['Picture_Shop'];
+$Picture_Amulet=$_POST['Picture_Amulet'];
 }
 
 else if(trim($_POST["Name_Shop1"]) == ""){
@@ -51,8 +52,8 @@ else if(trim($_POST["Type_Amulet"]) == ""){
     echo "<script>alert('Please input Type Amulet.');</script>";
 }
 else {
-    $sql = "INSERT INTO addShop (`Name_Shop`,`Name_Owner`,`Name_Amulet`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Detail_Amulet`,`Type_Amulet`,`Picture_Shop`)
-        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$Picture_Shop');";
+    $sql = "INSERT INTO addShop (`Name_Shop`,`Name_Owner`,`Name_Amulet`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Detail_Amulet`,`Type_Amulet`,`Picture_Shop`,`Picture_Amulet`)
+        Values ('$Name_Shop1','$Name_Owner','$Name_Amulet','$Phone','$Facebook','$Line1','$Detail_Shop','$Detail_Amulet','$Type_Amulet','$Picture_Shop','$Picture_Amulet');";
     $objQuery = mysql_query($sql);
     echo "<script>alert('Save Successfully.');</script>";
 }
@@ -90,6 +91,7 @@ mysql_close();
                         <textarea class="textareadetail" maxlength="200" value="" name="Detail_Amulet" id="Detail_Amulet" placeholder="detail_amulet"></textarea><br>
                         <input type="text" value="" name="Type_Amulet" id="Type_Amulet" placeholder="type_amulet"/><br>
                         <input type="file" value="" name="Picture_Shop" id="Picture_Shop" placeeholder="pictureshop"/><br>
+                        <input type="file" value="" name="Picture_Amulet" id="Picture_Amulet" placeholder="pictureamulet"/><br>
                         <button type="submit" name="submit">Add</button>
 			</div>			
 	</form>

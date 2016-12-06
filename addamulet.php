@@ -30,12 +30,6 @@ if (isset($_POST['submit'])) {
 	}
 	else{
 
-		$Str_file = explode(".",$_FILES['FrontPicture']['name']);
-   		$dateimage = substr(date("Ymdhisa"),0,14);
-    	$newname = $dateimage.".".$Str_file['1'];
-    
-    	$date = substr(date("Y-m-d h-i-sa"),0,19);
-
 		$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`pd_date`)
    		 Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$date');";
 

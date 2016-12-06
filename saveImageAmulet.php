@@ -3,8 +3,6 @@ include 'config.php';
 
 if(isset($_POST["submit"])) {
 
-        
-
 
 
     $Str_file = explode(".",$_FILES['FrontPicture']['name']);
@@ -20,7 +18,7 @@ if(isset($_POST["submit"])) {
 
     if(mysql_query($sql)){
         echo "<script>alert('Register successfully sent');</script>";
-        echo "<script>window.location.replace('addamulet.php');</script>";
+        // echo "<script>window.location.replace('addamulet.php');</script>";
              
         // header("location:addamulet.php");
 

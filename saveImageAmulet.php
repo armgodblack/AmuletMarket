@@ -69,7 +69,5 @@ if(isset($_POST["submit"])) {
 else{
     echo mysql_error();
 }
-
-
+}
 ?>
-

@@ -39,7 +39,7 @@ else if(trim($_POST["Phone"]) == ""){
 else if(trim($_POST["Facebook"]) == ""){
     echo "<script>alert('Please input Facebook.');</script>";
 }
-else if(trim($_POST["Line"]) == ""){
+else if(trim($_POST["Line1"]) == ""){
     echo "<script>alert('Please input Line.');</script>";
 }
 else if(trim($_POST["Detail_Shop"]) == ""){

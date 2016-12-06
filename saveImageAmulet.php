@@ -44,13 +44,6 @@ if(isset($_POST["submit"])) {
 
     
 
-
-
-
-
-
-}
-
     if (file_exists($target_file)) {
         echo "Sorry, file already exists.";
         $uploadOk = 0;
@@ -67,14 +60,13 @@ if(isset($_POST["submit"])) {
         $Str_file = explode(".",$_FILES['FrontPicture']['name']);
         $dateimage = substr(date("Ymdhisa"),0,14);
         $newname = $dateimage.".".$Str_file['1'];
-
+    }
     if (copy($_FILES["FrontPicture"]["tmp_name"], $target_dir. basename($newname))) {
 
     }
     else {
         echo "Sorry, there was an error uploading your file.";
     }
-}
 }
 else{
     echo mysql_error();

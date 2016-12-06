@@ -1,3 +1,4 @@
+<?ob_start();?>
 <?php
 include 'config.php';
 
@@ -16,7 +17,8 @@ if (isset($_POST['submit'])) {
 		$txtTypeAmulet=$_POST['txtTypeAmulet'];
 		$txtamuletdetail=$_POST['txtamuletdetail'];
 		$FrontPicture=$_POST['$FrontPicture'];
-//		$BackPicture=$_POST['$BackPicture'];
+		$BackPicture=$_POST['$BackPicture'];
+		$pd_date=$_POST['$pd_date'];
 
 
 	}
@@ -27,14 +29,32 @@ if (isset($_POST['submit'])) {
 		echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
 	}
 	else{
-		$sql= "insert into amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`)
-		values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$FrontPicture',)";
+
+		$Str_file = explode(".",$_FILES['FrontPicture']['name']);
+   		$dateimage = substr(date("Ymdhisa"),0,14);
+    	$newname = $dateimage.".".$Str_file['1'];
+    
+    	$date = substr(date("Y-m-d h-i-sa"),0,19);
+
+		$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`pd_date`)
+   		 Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$date');";
 
 		$objQuery = mysql_query($sql);
 		echo "<script>alert('Register successfully sent');</script>";
-	}
+
+
+		
+    	
+
+
+	} //end else
+
 
 }
+
+
+
+
 
 mysql_close();
 
@@ -60,7 +80,7 @@ mysql_close();
 
 				Font Amulet<input type="file" value="" name="FrontPicture" id="FrontPicture"  /><br>
 
-<!--				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br>-->
+				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br>
 
 				<textarea class="txtamuletdetail" row="4" cols="50" placeholder="รายละเอียดพระเครื่อง" name="txtamuletdetail"></textarea><br>
 

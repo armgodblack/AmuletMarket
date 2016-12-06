@@ -42,10 +42,7 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 
-   
-
-
-    }
+    
 
 
 

@@ -3,54 +3,54 @@
 include 'config.php';
 
 
-if (isset($_POST['submit'])) {
+// if (isset($_POST['submit'])) {
 
-	$sql="select * from amulet where Name_Owner = '".trim($_POST['txtNameOwner'])."' ";
-	$objQuery=mysql_query($sql);
-	$objResult=mysql_fetch_array($objQuery);
+// 	$sql="select * from amulet where Name_Owner = '".trim($_POST['txtNameOwner'])."' ";
+// 	$objQuery=mysql_query($sql);
+// 	$objResult=mysql_fetch_array($objQuery);
 
-	if ($objResult) {
-		echo "<script>alert('ชื่อเจ้าของมีอยู่ในระบบแล้ว');</script>";
+// 	if ($objResult) {
+// 		echo "<script>alert('ชื่อเจ้าของมีอยู่ในระบบแล้ว');</script>";
 
-		$txtNameOwner=$_POST['txtNameOwner'];
-		$txtNameAmulet=$_POST['txtNameAmulet'];
-		$txtTypeAmulet=$_POST['txtTypeAmulet'];
-		$txtamuletdetail=$_POST['txtamuletdetail'];
-		$FrontPicture=$_POST['$FrontPicture'];
-		$BackPicture=$_POST['$BackPicture'];
-		$pd_date=$_POST['$pd_date'];
+// 		$txtNameOwner=$_POST['txtNameOwner'];
+// 		$txtNameAmulet=$_POST['txtNameAmulet'];
+// 		$txtTypeAmulet=$_POST['txtTypeAmulet'];
+// 		$txtamuletdetail=$_POST['txtamuletdetail'];
+// 		$FrontPicture=$_POST['$FrontPicture'];
+// 		$BackPicture=$_POST['$BackPicture'];
+// 		$pd_date=$_POST['$pd_date'];
 
 
-	}
-	else if (trim($_POST["txtNameAmulet"])=="") {
-		echo "<script>alert('กรุณากรอกชื่อพระเครื่อง');</script>";
-	}
-	else if (trim($_POST["txtamuletdetail"])=="") {
-		echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
-	}
-	else{
+// 	}
+// 	else if (trim($_POST["txtNameAmulet"])=="") {
+// 		echo "<script>alert('กรุณากรอกชื่อพระเครื่อง');</script>";
+// 	}
+// 	else if (trim($_POST["txtamuletdetail"])=="") {
+// 		echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
+// 	}
+// 	else{
 
-		$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`pd_date`)
-   		 Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$date');";
+// 		$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`pd_date`)
+//    		 Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$date');";
 
-		$objQuery = mysql_query($sql);
-		echo "<script>alert('Register successfully sent');</script>";
+// 		$objQuery = mysql_query($sql);
+// 		echo "<script>alert('Register successfully sent');</script>";
 
 
 		
     	
 
 
-	} //end else
+// 	} //end else
 
 
-}
+// }
 
 
 
 
 
-mysql_close();
+// mysql_close();
 
 
 ?>

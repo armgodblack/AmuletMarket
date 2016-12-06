@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 
+//SSSS
 if(isset($_POST["submit"])) {
     
     $sql = "select * from addshop where Name_Shop = '".trim($_POST['Name_Shop1'])."' ";

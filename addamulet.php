@@ -72,9 +72,14 @@ include 'config.php';
 
 				<input type="text" name="txtTypeAmulet" value="" id="txtTypeAmulet" placeholder="ประเภทพระเครื่อง" /><br>
 
-				Font Amulet<input type="file" value="" name="FrontPicture" id="FrontPicture"  /><br>
+				Font Amulet<input type="file"  name="filUpload1"   /><br>
 
-				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br>
+				Back Amulet <input type="file"  name="filUpload2"  /><br>
+
+
+				<!-- Font Amulet<input type="file" value="" name="FrontPicture" id="FrontPicture"  /><br>
+
+				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br> -->
 
 				<textarea class="txtamuletdetail" row="4" cols="50" placeholder="รายละเอียดพระเครื่อง" name="txtamuletdetail"></textarea><br>
 

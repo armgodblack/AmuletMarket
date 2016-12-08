@@ -19,9 +19,11 @@ $_SESSION['username'];
 			<form class="form-signin">
 					<div class="form-signin">
 					<h2 class="form-signin-heading">Please login</h2>
-					<input type="text" value="" name="txtusername" id="txtusername" class="form-control" placeholder="Username"/>
+					<input type="text" value="" name="txtusername" id="txtusername" class="form-control" placeholder="Username" autofocus=""/>
 					<input type="password" value="" name="txtpassword" id="txtpassword" class="form-control" placeholder="Password"/>
 					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> 
+					<a href="resetpw.php">Forgot your password?</a>
+
 					</div>			
 			</form>
 		</div>

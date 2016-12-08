@@ -160,7 +160,8 @@ if(isset($_POST["submit"])) {
                 {
                     //*** Insert Record ***//
                     $strSQL =  "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`BackPicture`,`pd_date`)
-                                Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','".$_FILES["filUpload1"]["name"]."','".$_FILES["filUpload2"]["name"]."','$date');";
+                                Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail',
+                                        '".$_FILES["filUpload1"]["name"]."','".$_FILES["filUpload2"]["name"]."','$date');";
 
                     $objQuery = mysql_query($strSQL);
 

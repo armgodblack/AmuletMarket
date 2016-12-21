@@ -15,8 +15,9 @@ $objQuery = mysql_query($query) or die ("Error Query[".$query."]");
 </head>
 <body>
     <a href="addShop.php"> Add Shop </a><br>
-    <a href="addmarket.php"> Add Market </a><br>
-    <a href="addamulet.php"> Add Amulet </a>
+ <a href="addmarket.php"> Add Market </a><br>
+ <a href="addamulet.php"> Add Amulet </a><br>
+ <a href="top10amulet.php"> Top10Amulet </a><br>
     
     
 </body>

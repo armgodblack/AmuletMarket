@@ -1,75 +1,94 @@
-
+<?ob_start();?>
 <?php
 include 'config.php';
 
 
+// if (isset($_POST['submit'])) {
+
+// 	$sql="select * from amulet where Name_Owner = '".trim($_POST['txtNameOwner'])."' ";
+// 	$objQuery=mysql_query($sql);
+// 	$objResult=mysql_fetch_array($objQuery);
+
+// 	if ($objResult) {
+// 		echo "<script>alert('ชื่อเจ้าของมีอยู่ในระบบแล้ว');</script>";
+
+// 		$txtNameOwner=$_POST['txtNameOwner'];
+// 		$txtNameAmulet=$_POST['txtNameAmulet'];
+// 		$txtTypeAmulet=$_POST['txtTypeAmulet'];
+// 		$txtamuletdetail=$_POST['txtamuletdetail'];
+// 		$FrontPicture=$_POST['$FrontPicture'];
+// 		$BackPicture=$_POST['$BackPicture'];
+// 		$pd_date=$_POST['$pd_date'];
+
+
+// 	}
+// 	else if (trim($_POST["txtNameAmulet"])=="") {
+// 		echo "<script>alert('กรุณากรอกชื่อพระเครื่อง');</script>";
+// 	}
+// 	else if (trim($_POST["txtamuletdetail"])=="") {
+// 		echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
+// 	}
+// 	else{
+
+// 		$sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`pd_date`)
+//    		 Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$date');";
+
+// 		$objQuery = mysql_query($sql);
+// 		echo "<script>alert('Register successfully sent');</script>";
+
+
+		
+    	
+
+
+// 	} //end else
+
+
+// }
+
+
+
+
+
+// mysql_close();
+
+
 ?>
-
-
 
 <html>
 <head>
 	<title>AddAmulet</title>
-	<!-- <meta charset="utf-8"> -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">	
 </head>
 <body>
-	<a href="admin_page.php">HOME</a><br>
-	<a href="addShop.php"> Add Shop </a><br>
-    <a href="addmarket.php"> Add Market </a><br>
-    <a href="addamulet.php"> Add Amulet </a><br>
-    <a href="top10amulet.php"> Top10Amulet </a><br>
-
-
     <form action="saveImageAmulet.php" method="post" enctype="multipart/form-data">
 		<form class="form-addamulet">
 			<div class="form-addamulet">
 				<h2>Register Amulet</h2>
-				ชื่อหลวงพ่อ / พระเกจิ <input type="text" value="" name="txtNameLP" id="txtNameLP" placeholder="ชื่อหลวงพ่อ / พระเกจิ" autofocus="">
+				<input type="text" value="" name="txtNameAmulet" id="txtNameAmulet" placeholder="ชื่อพระเครื่อง" autofocus="">
 
-				<br>
-				<br>
-				เนื้อ/วัสดุ <select name="txtTypeAmulet">
-					<option value=""><-- เนื้อ/วัสดุ --></option>
-					<?php
-					$strSQL = "SELECT * FROM  typeamulet ORDER BY Id_Type ASC";
-					$objQuery = mysql_query($strSQL);
-					while($objResuut = mysql_fetch_array($objQuery))
-					{
-						?>
-						<option value="<?php echo $objResuut["Id_Type"];?>"><?php echo $objResuut["Type_Name_Amulet"];?></option>
-						<?php
-					}
-					?>
-					</select><br><br>	
+				<input type="text" name="txtTypeAmulet" value="" id="txtTypeAmulet" placeholder="ประเภทพระเครื่อง" /><br>
 
-				ชื่อรุ่นพระเครื่อง <input type="text" value="" name="txtgeneration" id="txtgeneration" placeholder="ชื่อรุ่นพระเครื่อง" autofocus=""><br> <!-- new -->
-				ปีที่สร้าง <input type="text" value="" name="txtyear" id="txtyear" placeholder="ปีที่สร้าง" autofocus=""><br> <!-- new -->
-				ออกที่วัด <input type="text" value="" name="txttemple" id="txttemple" placeholder="ออกที่วัด" autofocus=""><br> <!-- new -->
-				จังหวัด <input type="text" value="" name="txtprovince" id="txtprovince" placeholder="จังหวัด" autofocus=""><br> <!-- new -->
+				Font Amulet<input type="file"  name="filUpload1"   /><br>
 
-				<!-- <input type="text" name="txtTypeAmulet" value="" id="txtTypeAmulet" placeholder="ประเภทพระเครื่อง" /><br> -->
+				Back Amulet <input type="file"  name="filUpload2"  /><br>
+
 
 				<!-- Font Amulet<input type="file" value="" name="FrontPicture" id="FrontPicture"  /><br>
 
 				Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br> -->
 
+				<textarea class="txtamuletdetail" row="4" cols="50" placeholder="รายละเอียดพระเครื่อง" name="txtamuletdetail"></textarea><br>
 
-				ชื่อเจ้าของพระ <input type="text" value="" name="txtNameOwner" id="txtNameOwner" placeholder="ชื่อเจ้าของพระ"	><br>
-
-				Font Amulet<input type="file"  name="FrontPicture"   /><br>
-
-				Back Amulet <input type="file"  name="BackPicture"  /><br>
+				<input type="text" value="" name="txtNameOwner" id="txtNameOwner" placeholder="ชื่อเจ้าของพระ"	><br>
 
 				<button type="submit" name="submit">submit</button>
 				<input type="reset" value="cancel">
 			</div>
 		</form>
 	</form>
-
-	
 </body>
 </html>

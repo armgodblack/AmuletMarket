@@ -47,9 +47,10 @@ $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 			$result = mysql_fetch_array($db_query);
 			$path = "Images/ImagesAmulet/imgfont/"; 
 
-			$sql1 ="SELECT typeamulet.Type_Name_Amulet, amulet.ID_Amulet, amulet.Name_Owner FROM categories INNER JOIN products ON typeamulet.Id_Type=amulet.TypeAmulet;"
-			$db_query=mysql_query($sql);
-			$result1 = mysql_fetch_array($db_query);
+			$sql1 ="SELECT audit.* FROM customer,audit 
+										WHERE customer.CustomerID = audit.CustomerID 
+										AND customer.CustomerID = 'C001'"
+			
 
 			while($objResult = mysql_fetch_array($objQuery))
 			{

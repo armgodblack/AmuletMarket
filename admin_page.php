@@ -19,6 +19,6 @@ $objQuery = mysql_query($query) or die ("Error Query[".$query."]");
  <a href="addamulet.php"> Add Amulet </a><br>
  <a href="top10amulet.php"> Top10Amulet </a><br>
     
-    
+    <!-- test -->
 </body>
 </html>

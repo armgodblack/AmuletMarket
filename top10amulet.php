@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
-
+$strSQL = "SELECT * FROM amulet";
+$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 
 
 ?>
@@ -46,7 +47,9 @@ include 'config.php';
 			$result = mysql_fetch_array($db_query);
 			$path = "Images/ImagesAmulet/imgfont/"; 
 
-
+			$sql1 ="SELECT typeamulet.Type_Name_Amulet, amulet.ID_Amulet, amulet.Name_Owner FROM categories INNER JOIN products ON typeamulet.Id_Type=amulet.TypeAmulet;"
+			$db_query=mysql_query($sql);
+			$result1 = mysql_fetch_array($db_query);
 
 			while($objResult = mysql_fetch_array($objQuery))
 			{

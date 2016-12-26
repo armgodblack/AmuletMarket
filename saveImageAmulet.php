@@ -18,24 +18,26 @@ include 'config.php';
          echo "<script>alert('ชื่อเจ้าของมีอยู่ในระบบแล้ว');</script>";
 
          $txtNameOwner=$_POST['txtNameOwner'];
-         $txtNameAmulet=$_POST['txtNameAmulet'];
+         $txtNameLP=$_POST['txtNameLP'];
          $txtTypeAmulet=$_POST['txtTypeAmulet'];
-         $txtamuletdetail=$_POST['txtamuletdetail'];
+         $txtgeneration=$_POST['txtgeneration'];
+         $txtyear=$_POST['$txtyear'];
+         $txttemple=$_POST['$txttemple'];
+         $txtprovince=$_POST['$txtprovince'];
          $FrontPicture=$_POST['$FrontPicture'];
          $BackPicture=$_POST['$BackPicture'];
-         $pd_date=$_POST['$pd_date'];
     }
 
-     else if (trim($_POST["txtNameAmulet"])=="") {
+     else if (trim($_POST["txtNameLP"])=="") {
       echo "<script>alert('กรุณากรอกชื่อพระเครื่อง');</script>";
      }
-     else if (trim($_POST["txtamuletdetail"])=="") {
-      echo "<script>alert('กรุณากรอกรายระเอียดพระเครื่อง');</script>";
+     else if (trim($_POST["txtgeneration"])=="") {
+      echo "<script>alert('กรุณากรอกรุ่นระเอียดพระเครื่อง');</script>";
      }
      else{
 
-          $sql = "INSERT INTO amulet (`Name_Owner`,`NameAmulet`,`TypeAmulet`,`DetailAmulet`,`FrontPicture`,`BackPicture`,`pd_date`)
-           Values ('$txtNameOwner','$txtNameAmulet','$txtTypeAmulet','$txtamuletdetail','$newname','$newname','$date');";
+          $sql = "INSERT INTO amulet (`Name_Owner`,`NameLP`,`TypeAmulet`,`Generation`,`YearAmulet`,`Temple`,`Province`,`FrontPicture`,`BackPicture`,`pd_date`)
+           Values ('$txtNameOwner','$txtNameLP','$txtTypeAmulet','$txtgeneration','$txtyear','$txttemple','$txtprovince','$newname','$newname','$date');";
 
      
      

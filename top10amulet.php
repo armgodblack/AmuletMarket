@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
-$strSQL = "SELECT * FROM amulet";
-$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+// $strSQL = "SELECT * FROM amulet LEFT JOIN typeamulet ON amulet.TypeAmulet = typeamulet.Id_Type;";
+// $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 
 
 ?>
@@ -36,32 +36,40 @@ $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
 				<th width="200"> <div align="center">วัด</div></th>
 				<th width="200"> <div align="center">จังหวัด</div></th>
 				<th width="200"> <div align="center">รูป</div></th>
+				<th width="200"> <div align="center">ลบ</div></th>
+				<th width="200"> <div align="center">แก้ไข</div></th>
 			</tr>
 
 			<?php
 
 			include 'config.php';
 
-			$sql = "SELECT * FROM amulet ";
+			$sql = "SELECT * FROM amulet LEFT JOIN typeamulet ON amulet.TypeAmulet = typeamulet.Id_Type;";
 			$db_query=mysql_query($sql);
-			$result = mysql_fetch_array($db_query);
+			// $result = mysql_fetch_array($db_query);
 			$path = "Images/ImagesAmulet/imgfont/"; 
 
-			
 
-			while($objResult = mysql_fetch_array($objQuery))
+
+
+
+			while($objResult = mysql_fetch_array($db_query))
 			{
 				?>
+
+				
 				<tr>
 					<td><div align="center"><?php echo $objResult["ID_Amulet"];?></div></td>
 					<td align="center"><?php echo $objResult["Name_Owner"];?></td>
 					<td align="center"><?php echo $objResult["NameLP"];?></td>
-					<td align="center"><?php echo $objResult["TypeAmulet"];?></td>
+					<td align="center"><?php echo $objResult["Type_Name_Amulet"];?></td>
 					<td align="center"><?php echo $objResult["Generation"];?></td>
 					<td align="center"><?php echo $objResult["YearAmulet"];?></td>
 					<td align="center"><?php echo $objResult["Temple"];?></td>
 					<td align="center"><?php echo $objResult["Province"];?></td>
 					<td align="center"><img src="<? echo $path.$objResult['FrontPicture']; ?>" width="100" height="143" border="3" /></td>
+					<td align="center"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='delete.php?ID_Amulet=<?php echo $objResult["ID_Amulet"];?>';}">Delete</a></td>
+					<td align="center"><a href="JavaScript:if(confirm('Confirm Edit?')==true){window.location='editamulet.php?ID_Amulet=<?php echo $objResult["ID_Amulet"];?>';}">Edit</a></td>
 				</tr>
 				<?php
 			}

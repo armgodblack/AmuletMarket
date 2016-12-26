@@ -21,13 +21,13 @@ if ($objResult) {
 else if (trim($_POST["txtNameMarket"])=="") {
 	echo "<script>alert('กรุณากรอกชื่อตลาดพระ');</script>";
 }
-else if (trim($_POST["textareaDetail"])=="") {
+else if (trim($_POST["txtaddress"])=="") {
 	echo "<script>alert('กรุณากรอกรายระเอียดตลาดพระ');</script>";
 }
 
 else{
-	$sql= "insert into market (Name_Market, Detail_Market, Latitude, Longitude)
-		values ('$txtNameMarket','$textareaDetail','$lat_value','$lon_value')";
+	$sql= "insert into market (Name_Market, Address, Zone, Canton, Zipcode, Province, TelOffice, TelOwner, Time, Latitude, Longitude)
+		values ('$txtNameMarket','$txtaddress','$txtzone','$txtcanton','$txtzipcode','$txtprovince','$txtoffice','$txtowner','$txttime','$lat_value','$lon_value')";
 	$objQuery = mysql_query($sql);
 		echo "<script>alert('Register successfully sent');</script>";
 
@@ -55,9 +55,31 @@ mysql_close();
 		<form class="form-addmarket">
 			<div class="form-addmerket">
 				<h2>Register AmuletMarket</h2>
+				<a href="admin_page.php">HOME</a><br>
+    			<a href="addShop.php"> Add Shop </a><br>
+    			<a href="addmarket.php"> Add Market </a><br>
+    			<a href="addamulet.php"> Add Amulet </a><br>
+    			<a href="top10amulet.php"> Top10Amulet </a><br>
 
-				<input type="text" value="" name="txtNameMarket" id="txtNameMarket" placeholder="ชื่อตลาดพระเครื่อง" autofocus="" /><br>
-				<textarea class="textareaDetail" rows="4" cols="50" placeholder="รายระเอียดตลาดพระ" name="textareaDetail"></textarea><br>
+				ชื่อตลาดพระเครื่อง  <input type="text" value="" name="txtNameMarket" id="txtNameMarket" placeholder="ตลาดพระXXXX" autofocus="" /><br>
+				
+
+				ที่อยู่  <input type="text" name="txtaddress" id="txtaddress" placeholder="537 ซอยxx ถนนxx" /><br>
+				เขต / อำเภอ <input type="text" name="txtzone" id="txtzone" placeholder=" อำเภอ สามพราน" /><br>
+				แขวง / ตำบล <input type="text" name="txtcanton" id="txtcanton" placeholder=" ตำบล ออมใหญ่" /><br>
+				รหัสไปรษณีย์ <input type="text" name="txtzipcode" maxlength="5" id="txtzipcode"   placeholder=" 10120" /><br>
+				จังหวัด <input type="text" name="txtprovince"  id="txtprovince" placeholder=" นครปฐม" /><br>
+				เบอร์โทรศัพท์สำนักงาน <input type="text" name="txtoffice" maxlength="10" id="txtoffice" placeholder=" 022222222" /><br>
+				เบอร์โทรศัพท์ส่วนตัว <input type="text" name="txtowner" maxlength="10" id="txtowner" placeholder=" 0888888888" /><br>
+				เวลาเปิด-ปิด<input type="text" name="txttime" id="txttime" placeholder="10.00น.-22.30น." /><br>
+				
+
+
+
+
+
+
+
 			</div>
 
 			<form id="form_get_detailMap" name="form_get_detailMap" method="post" action="">  

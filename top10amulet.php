@@ -16,6 +16,14 @@ include 'config.php';
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+     <nav class="navbar navbar-inverse">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
+        <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
+        
+    </nav>
+    
+    
 	<a href="admin_page.php">HOME</a><br>
     <a href="addShop.php"> Add Shop </a><br>
     <a href="addmarket.php"> Add Market </a><br>

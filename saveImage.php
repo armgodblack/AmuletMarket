@@ -43,8 +43,7 @@ else if(trim($_POST["Name_Shop1"]) == ""){
 }else{
     $sql = "INSERT INTO addshop (`Name_Shop`,`Name_Owner`,`MarketAmuletShop`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Picture_Shop`,`Img_Logo`,`pd_date`)
         Values ('$Name_Shop1','$Name_Owner','$MarketAmuletShop','$Phone','$Facebook','$Line1','$Detail_Shop','$newname','$newname','$date');";  
-echo "<script>alert('Save successfully.');</script>";
-    
+echo "<script>alert('Save successfully.');</script>";     
 }
     
     if(mysql_query($sql)){

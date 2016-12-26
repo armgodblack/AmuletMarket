@@ -9,7 +9,6 @@ include 'config.php';
 	<title>Login</title>
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/stylemenu.css">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -20,65 +19,38 @@ include 'config.php';
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-function Preview(ele) {
-$('#img').attr('src', ele.value);
-if (ele.files && ele.files[0]) {
-var reader = new FileReader();
-reader.onload = function (e) {
-$('#img').attr('src', e.target.result);
-}
-reader.readAsDataURL(ele.files[0]);
-}
-}
-</script>
-        
-        
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
-        <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
-    </nav>
-
-
 </head>
 <body> 
-<!--    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
+        <img src="AmuletMarket.png" class="img-circle" width="80" height="80">
         <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
-    </nav>-->
-<br><br><br><br>
+        
+    </nav>
+
+    
+    
     <form>
-        <div class="col-md-2 menuhref sidenav">
-            <ul class="nav nav-pills nav-stacked menuhref">
-                <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/>&nbsp;&nbsp;&nbsp;ManageShop</a></li>
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked" >
+                <li class="menu"><a href="admin_page.php">ManageShop</a></li>
                 <li class="menu"><a href="addShop.php">Add Shop</a></li>
                 <li class="menu"><a href="addamulet.php">Add Amulet</a></li>
                 <li class="menu"><a href="addmarket.php">Add Market</a></li>
             </ul>
         </div>
         
+        
     </form>
     
     
     
 
-    <form name="addshop" action="saveImage.php" method="post" enctype="multipart/form-data" align="right">
+    <form action="saveImage.php" method="post" enctype="multipart/form-data" align="center">
 	<form class="form-addShop">
 		<div class="form-addShop">
                     <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-3">
-                            
-                            
-                            
-                        <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/>
-                        <input  type="file" value="" name="Picture_Amulet" id="Picture_Amulet" OnChange="Preview(this)" placeholder="รูปโลโก้ร้านค้า"/><br>
-                        
-                        
-                        
+                        <div class="col-md-2">
                         <input class="form-control" type="text" value="" name="Name_Shop1" id="Name_Shop" placeholder="ชื่อร้านค้า" autofocus/><br>
                         <input class="form-control" type="text" value="" name="Name_Owner" id="Name_Owner" placeholder="ชื่อเจ้าของร้านค้า"/><br>
                         
@@ -103,22 +75,16 @@ reader.readAsDataURL(ele.files[0]);
                         <input class="form-control" type="text" value="" name="Line1" id="Line1" placeholder="line"/><br>
                         <textarea class="form-control" maxlength="200" value="" name="Detail_Shop" id="Detail_Shop" placeholder="รายละเอียดของร้านค้า"></textarea><br>
                         <input type="file" value="" name="Picture_Shop" id="Picture_Shop" placeeholder="รูปร้านค้า"/><br>
-                        
+                        <input type="file" value="" name="Picture_Amulet" id="Picture_Amulet" placeholder="รูปโลโก้ร้านค้า"/><br>
+                        <button type="button" class="btn btn-danger">Add</button>
+                        <button type="reset" class="btn btn-danger">Back</button>
 			</div>
-                        <div class="col-sm-4"></div>
                     </div>
+	</form>
         
         
         
-
-            <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <div class="col-sm-4"></div>
-                <div class="buttonsubmit col-sm-4 ">
-                <button type="submit" name="submit" class="btn btn-danger">Add</button>&nbsp;&nbsp;&nbsp;
-                <button type="reset" class="btn btn-danger">Cancel</button>
-                </div>
-                <div class="col-sm-4"></div>
-            </div>
-        </form>
+        
+        
 </body>
 </html>

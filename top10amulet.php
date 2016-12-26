@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
-// $strSQL = "SELECT * FROM amulet LEFT JOIN typeamulet ON amulet.TypeAmulet = typeamulet.Id_Type;";
-// $objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
+// $sql = 'SELECT * FROM amulet ORDER BY ID_Amulet ASC';
+// $query=mysql_query($sql);
 
 
 ?>
@@ -14,75 +14,85 @@ include 'config.php';
 	<title>Administrator</title>
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="css/style.css">
+
+	 <!-- Latest compiled and minified CSS -->
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+ 	<!-- Optional theme -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	 <!-- Latest compiled and minified JavaScript -->
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+
+
 </head>
 <body>
-	<a href="admin_page.php">HOME</a><br>
-    <a href="addShop.php"> Add Shop </a><br>
-    <a href="addmarket.php"> Add Market </a><br>
-    <a href="addamulet.php"> Add Amulet </a><br>
-    <a href="top10amulet.php"> Top10Amulet </a><br>
+
+ 	<nav class="navbar navbar-inverse">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="AmuletMarket.png" class="img-circle" width="80" height="80">
+        <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
+        
+    </nav>
+
+
+
+<form>
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked" >          
+                <li class="menu"><a href="admin_page.php">HOME</a></li>
+                <li class="menu"><a href="addShop.php">Add Shop</a></li>
+                <li class="menu"><a href="addamulet.php">Add Amulet</a></li>
+                <li class="menu"><a href="addmarket.php">Add Market</a></li>
+                <li class="menu"><a href="top10amulet.php">Top10Amulet</a></li>
+            </ul>
+        </div>
+        
+        
+    </form>
+
     
 <div>
 	<div>
-		<center><h2><b>แสดงจำนวนพระเครื่องที่จัดอันดับยอดนิยม</b></h2></center>
-		<table align="center" width="1000" border="2">
-			<tr>
-				<th width="200"> <div align="center">รหัส</div></th>
-				<th width="200"> <div align="center">เจ้าของพระ</div></th>
-				<th width="200"> <div align="center">หลวงพ่อ/เกจิ</div></th>
-				<th width="200"> <div align="center">เนื้อ/วัสดุ</div></th>
-				<th width="200"> <div align="center">รุ่น</div></th>
-				<th width="200"> <div align="center">ปี</div></th>
-				<th width="200"> <div align="center">วัด</div></th>
-				<th width="200"> <div align="center">จังหวัด</div></th>
-				<th width="200"> <div align="center">รูป</div></th>
-				<th width="200"> <div align="center">ลบ</div></th>
-				<th width="200"> <div align="center">แก้ไข</div></th>
-			</tr>
+		<div class="container col-md-8">
+			<div class="content">
+			<ul id="sortable">
 
-			<?php
 
-			include 'config.php';
-
-			$sql = "SELECT * FROM amulet LEFT JOIN typeamulet ON amulet.TypeAmulet = typeamulet.Id_Type;";
+            <?php
+            $sql = "SELECT * FROM amulet LEFT JOIN typeamulet ON amulet.TypeAmulet = typeamulet.Id_Type;";
 			$db_query=mysql_query($sql);
-			// $result = mysql_fetch_array($db_query);
-			$path = "Images/ImagesAmulet/imgfont/"; 
+            $path = "Images/ImagesAmulet/imgfont/"; 
+
+           while($objResult = mysql_fetch_array($db_query)){
+            ?>
+            <div >
+            <li id="<?php echo $objResult['ID_Amulet']; ?>" >
+    			
+        		<img src="<? echo $path.$objResult['FrontPicture']; ?>" width="100" height="143" border="3" />
+                <div>
+                	<h1><?php echo $objResult['NameLP']; ?></h1>
+                		<?php echo $objResult['Generation']; ?>  <?php echo $objResult["Temple"];?> จังหวัด <?php echo $objResult["Province"];?> ปี <?php echo $objResult["YearAmulet"];?> 
+                		<h2>เจ้าของพระ : <?php echo $objResult['Name_Owner']; ?></h2>
+                </div>
+
+                </div>
+            </li>
+            <?php
+            }
+            ?>
+        </ul>
 
 
 
 
-
-			while($objResult = mysql_fetch_array($db_query))
-			{
-				?>
-
-				
-				<tr>
-					<td><div align="center"><?php echo $objResult["ID_Amulet"];?></div></td>
-					<td align="center"><?php echo $objResult["Name_Owner"];?></td>
-					<td align="center"><?php echo $objResult["NameLP"];?></td>
-					<td align="center"><?php echo $objResult["Type_Name_Amulet"];?></td>
-					<td align="center"><?php echo $objResult["Generation"];?></td>
-					<td align="center"><?php echo $objResult["YearAmulet"];?></td>
-					<td align="center"><?php echo $objResult["Temple"];?></td>
-					<td align="center"><?php echo $objResult["Province"];?></td>
-					<td align="center"><img src="<? echo $path.$objResult['FrontPicture']; ?>" width="100" height="143" border="3" /></td>
-					<td align="center"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='delete.php?ID_Amulet=<?php echo $objResult["ID_Amulet"];?>';}">Delete</a></td>
-					<td align="center"><a href="JavaScript:if(confirm('Confirm Edit?')==true){window.location='editamulet.php?ID_Amulet=<?php echo $objResult["ID_Amulet"];?>';}">Edit</a></td>
-				</tr>
-				<?php
-			}
-			?>
-
-			<?
-			
-
-
-			?>
-
-		</table>
-
+        	</div><!-- content -->
+		</div> <!-- container -->
 	</div>
 
 </div>
@@ -92,3 +102,4 @@ include 'config.php';
     
 </body>
 </html>
+

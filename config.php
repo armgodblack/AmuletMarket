@@ -1,5 +1,6 @@
 <?php 
 
+
 $host='localhost';
 $accountname='root';
 $pass='1234';

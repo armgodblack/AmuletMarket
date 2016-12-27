@@ -9,7 +9,7 @@
 
 .sidenav {
     background-color: #607d8b;
-    height: 100%;
+    height: 150%;
     margin-bottom: 0px;
 }
         
@@ -30,7 +30,7 @@
 .nav>li>a:focus, 
 .nav>li>a:hover {
     text-decoration: none;
-    background-color: #009688 !important; 
+    background-color: #009688 !important;
 }
 
 .navbar {
@@ -58,4 +58,17 @@
 
 .buttonsubmit{
     margin-top: 8px;
+}
+
+
+.widthcol9{
+    width: 83.3% !important;
+    background: #009688 !important;
+    margin-top: -13px !important;
+}
+
+/*Input Search*/
+.textsize{
+    font-size: 20 !important;
+    border-radius: 20px !important;
 }

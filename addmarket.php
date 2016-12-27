@@ -29,7 +29,7 @@ else{
 	$sql= "insert into market (Name_Market, Address, Zone, Canton, Zipcode, Province, TelOffice, TelOwner, Time, Latitude, Longitude)
 		values ('$txtNameMarket','$txtaddress','$txtzone','$txtcanton','$txtzipcode','$txtprovince','$txtoffice','$txtowner','$txttime','$lat_value','$lon_value')";
 	$objQuery = mysql_query($sql);
-		echo "<script>alert('Register successfully sent');</script>";
+		echo "<script>alert('Save successfully');</script>";
 
 }
 
@@ -48,73 +48,91 @@ mysql_close();
 	<meta charset="UTF-8">
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="css/style.css">  
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">	
-	 <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        
+	<link rel="stylesheet" href="css/stylemenu.css">
 
- <!-- Optional theme -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
- <!-- Latest compiled and minified JavaScript -->
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
+        <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
+    </nav>
+ 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="AmuletMarket.png" class="img-circle" width="80" height="80">
-        <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
-        
-    </nav>
+<br><br><br><br>
+    
+    <form>
+        <div class="col-md-2 menuhref sidenav">
+            <ul class="nav nav-pills nav-stacked menuhref menu">
+                <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
+                <li class="menu"><a href="addamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet</a></li>
+                <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Market</a></li>
+                <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Shop</a></li>
+                <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
+            
+                <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
+                
+                <li class="menu"><a href="addShop.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            </ul>
+        </div>
+    </form>
+    
 	<form action="addmarket.php" method="post" >
 		<form class="form-addmarket " >
-			<div class="form-addmerket " >
-				<form>
-        			<div class="col-md-2">
-           				 <ul class="nav nav-pills nav-stacked" >          
-                			<li class="menu"><a href="admin_page.php">HOME</a></li>
-                			<li class="menu"><a href="addShop.php">Add Shop</a></li>
-                			<li class="menu"><a href="addamulet.php">Add Amulet</a></li>
-                			<li class="menu"><a href="addmarket.php">Add Market</a></li>
-                			<li class="menu"><a href="top10amulet.php">Top10Amulet</a></li>
-           				 </ul>
-       				</div>
-        
-        
-    	</form>
-
-				ชื่อตลาดพระเครื่อง  <input type="text" value="" name="txtNameMarket" id="txtNameMarket" placeholder="ตลาดพระXXXX" autofocus="" /><br>
-				
-
-				ที่อยู่  <input type="text" name="txtaddress" id="txtaddress" placeholder="537 ซอยxx ถนนxx" /><br>
-				เขต / อำเภอ <input type="text" name="txtzone" id="txtzone" placeholder=" อำเภอ สามพราน" /><br>
-				แขวง / ตำบล <input type="text" name="txtcanton" id="txtcanton" placeholder=" ตำบล ออมใหญ่" /><br>
-				รหัสไปรษณีย์ <input type="text" name="txtzipcode" maxlength="5" id="txtzipcode"   placeholder=" 10120" /><br>
-				จังหวัด <input type="text" name="txtprovince"  id="txtprovince" placeholder=" นครปฐม" /><br>
-				เบอร์โทรศัพท์สำนักงาน <input type="text" name="txtoffice" maxlength="10" id="txtoffice" placeholder=" 022222222" /><br>
-				เบอร์โทรศัพท์ส่วนตัว <input type="text" name="txtowner" maxlength="10" id="txtowner" placeholder=" 0888888888" /><br>
-				เวลาเปิด-ปิด<input type="text" name="txttime" id="txttime" placeholder="10.00น.-22.30น." /><br>
-				
-
-
-
-
-
-
-
-			</div>
+                    <div class="col-md-3"></div>
+			<div class="form-addmerket col-md-3" >
+                            <input class="form-control" type="text" value="" name="txtNameMarket" id="txtNameMarket" placeholder="ชื่อตลาดพระเครื่อง" autofocus="" /><br>
+                            <input class="form-control" type="text" name="txtaddress" id="txtaddress" placeholder="ที่อยู่" /><br>
+                            <input class="form-control" type="text" name="txtzone" id="txtzone" placeholder="เขต / อำเภอ" /><br>
+                            <input class="form-control" type="text" name="txtcanton" id="txtcanton" placeholder="แขวง / ตำบล" /><br>
+                            <input class="form-control" type="text" name="txtzipcode" maxlength="5" id="txtzipcode"   placeholder="รหัสไปรษณีย์" /><br>
+                            <input class="form-control" type="text" name="txtprovince"  id="txtprovince" placeholder="จังหวัด" /><br>
+                            <input class="form-control" type="text" name="txtoffice" maxlength="10" id="txtoffice" placeholder="เบอร์โทรศัพท์สำนักงาน" /><br>
+                            <input class="form-control" type="text" name="txtowner" maxlength="10" id="txtowner" placeholder="เบอร์โทรศัพท์ส่วนตัว" /><br>
+                            <input class="form-control" type="text" name="txttime" id="txttime" placeholder="เวลาเปิด-ปิด" /><br>
+			
 
 			<form  id="form_get_detailMap" name="form_get_detailMap" method="post" action="" >  
-			<div id="map"  style="width:550px;height:400px"></div>
-			Latitude  
-				<input name="lat_value" type="text" id="lat_value" value="0" />  <br />
-			Longitude  
-				<input name="lon_value" type="text" id="lon_value" value="0" />  <br /> <br />
-			<button type="submit" name="submit" >Submit</button>
-			<input type="reset" value="cancel" >  
-		</form>  
+                            <div id="map"  style="width:550px;height:400px"></div><br>
+                            <span style="color:white; text-align:center;"><font size="4">Latitude</font></span>
+				<input class="form-control" name="lat_value" type="text" id="lat_value" value="0"/><br>
+                            <span style="color:white; text-align:center;"><font size="4">Longitude</font></span>
+				<input class="form-control" name="lon_value" type="text" id="lon_value" value="0"/><br/><br/>
+                                
+                        </div>
+                        <div class="col-sm-4"></div>
+                        
+                        <!--Footer tag-->
+			<div class="navbar navbar-inverse navbar-fixed-bottom">
+                        <div class="col-sm-4"></div>
+                        <div class="buttonsubmit col-sm-4" align="right">
+                        <button type="submit" name="submit" class="btn btn-danger">Add</button>&nbsp;&nbsp;&nbsp;
+                        <button type="reset" class="btn btn-danger">Cancel</button>
+                        </div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                                
+                        </form>  
 		</form>
 	</form>		
+
 
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript">

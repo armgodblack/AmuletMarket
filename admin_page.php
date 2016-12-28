@@ -70,8 +70,8 @@
         </div>
     <br><br><br><br>
         
-    <div class="col-md-2"></div>
-        <div class="col-md-3">
+    <div class="col-md-1"></div>
+        <div class="col-md-4">
             
  <?php
     $sql = "SELECT * FROM addshop INNER JOIN market ON addshop.MarketAmuletShop= market.id_amuletmarket";
@@ -80,32 +80,34 @@
  
 
      while($row = mysql_fetch_array($result)) {
-         echo "ID: " . $row["ID_Shop"]. " " . $row["Name_Shop"]. " " .$row["Name_Market"]. " " . $row["Img_Logo"]."<br>";
+//         echo "ID: " . $row["ID_Shop"]. " " . $row["Name_Shop"]. " " .$row["Name_Market"]."<br>";
 ?>
-            
-        <table width="500" border="1" align="center" cellpadding="0" cellspacing="0" class="font">
-            
-        <tr>
-            
-            <td align="center">
-                <img src="<? echo $path.$row['Img_Logo']; ?>" width="150" height="150" border="3" />
-                    <?php 
-                    echo "". $row["ID_Shop"]."&nbsp&nbsp&nbsp&nbsp";
-                    echo "". $row["Name_Shop"]."";
-                    ?>
-                    
-            </td>
-            
-        </tr>
-            
-        </table>
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <table>
+                    <tr>
+                        <td>
+                            <img src="<? echo $path.$row['Img_Logo']; ?>" width="150" height="150" border="3"/>&nbsp&nbsp&nbsp&nbsp
+                            <font size="4"><strong>
+                        <?php
+                            echo "". $row["Name_Shop"]."";
+                        ?>
+                                </strong>
+                            </font>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+                
+            </div><br>
+ 
       <?php
       }
       ?>
             
 
+        
     <div class="col-md-3"></div>
-    <div class="col-md-2"></div>
     </div>
     
    

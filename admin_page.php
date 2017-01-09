@@ -72,7 +72,7 @@
     <br><br><br><br>
         
     <div class="col-md-1"></div>
-<<<<<<< HEAD
+
         <div class="col-md-3">
             
  <?php
@@ -106,11 +106,10 @@
         <?php
         }
         ?>
-=======
+
         <div class="col-md-4">
  
 
->>>>>>> origin/master
         
         </div>
          <div class="col-md-1"></div>

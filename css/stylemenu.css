@@ -9,7 +9,7 @@
 
 .sidenav {
     background-color: #607d8b;
-    height: 500%;
+    height: auto;
     margin-bottom: 0px;
 }
         
@@ -74,5 +74,5 @@
 }
 
 .container{
-    margin-left: 125px !important;
+    margin-left: 125px ;
 }

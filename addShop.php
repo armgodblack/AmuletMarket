@@ -48,11 +48,6 @@ include 'config.php';
 
 </head>
 <body> 
-<!--    <nav class="navbar navbar-inverse navbar-fixed-top">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
-        <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
-    </nav>-->
 <br><br><br><br>
 
     <form>
@@ -90,8 +85,8 @@ include 'config.php';
                             
                             
                         <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
-                        <span style="color:white; text-align:center;"><font size="4">Logo Shop</font></span>
-                        <input  type="file" value="" name="Picture_Amulet" id="Picture_Amulet" OnChange="Preview(this)" placeholder="รูปโลโก้ร้านค้า"/><br>
+                        <span style=" text-align:center;"><font size="4">Logo Shop</font></span>
+                        <input  type="file" value="" name="Img_Logo" id="Img_Logo" OnChange="Preview(this)" placeholder="รูปโลโก้ร้านค้า"/><br>
                         
                         
                         

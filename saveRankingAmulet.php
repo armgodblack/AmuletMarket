@@ -1,17 +1,19 @@
 <?php
 
-// include('config.php');
-// $pdo = connect();
+// including the config file
+include('config.php');
 
 
-// $list_order = $_POST['list_order'];
-
-// $list = explode(',' , $list_order);
+// get the list of items id separated by cama (,)
+$ID_Amulet = $_POST['ID_Amulet'];
+// convert the string list to an array
+$list = explode(',' , $ID_Amulet);
+echo $ID_Amulet;
 // $i = 1 ;
 // foreach($list as $id) {
 //     try {
 //         $sql  = 'UPDATE items SET item_order = :item_order WHERE id = :id' ;
-//         $query = $pdo->prepare($sql);
+//         $query = mysql_query($sql);
 //         $query->bindParam(':item_order', $i, PDO::PARAM_INT);
 //         $query->bindParam(':id', $id, PDO::PARAM_INT);
 //         $query->execute();
@@ -20,28 +22,4 @@
 //     }
 //     $i++ ;
 // }
-
-include('config.php');
-
-$strSQL = "UPDATE rankingamulet SET NameLP = '".trim($_POST['txtNameLP'])."'
-,TypeAmulet= '".trim($_POST['txtTypeAmulet'])."'
-,Generation = '".trim($_POST['txtgeneration'])."'
-,YearAmulet = '".trim($_POST['txtyear'])."'
-,Temple = '".trim($_POST['txttemple'])."'
-,Province = '".trim($_POST['txtprovince'])."'
-,Name_Owner = '".trim($_POST['txtNameOwner'])."'
-,FrontPicture = '".trim($newname)."'
-,BackPicture = '".trim($newname)."'
-,pd_date = '".trim($date)."'
-WHERE ID_Ranking = '".trim($_POST['idA'])."' ";
-$objQuery = mysql_query($strSQL);
-
-
-if($objQuery){
-    echo "<script>alert('Save Completed!');window.location.href='top10amulet.php';</script>";
-}
-else{
-    echo mysql_error();
-}
-
 ?>

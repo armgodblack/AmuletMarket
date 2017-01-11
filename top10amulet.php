@@ -50,6 +50,7 @@ include 'config.php';
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
             
                 <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
@@ -68,7 +69,7 @@ include 'config.php';
         <div class=col-md-1"></div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div class=" col-md-8">
-            <table id="sort" class="grid container" border="1px">
+            <table id="sort" class="grid container" border="1px" >
                 <thead>
                     <tr>
                     <th width="150"><th width="200"> <div align="center">รหัส</div></th>
@@ -147,7 +148,7 @@ include 'config.php';
             <div class="col-sm-4"></div>
             <div class="col-sm-4"></div>
             <div class="buttonsubmit col-sm-4" align="right">
-            <button type="submit" name="submit" class="btn btn-danger">ยืนยันการแก้ไข</button>&nbsp;&nbsp;&nbsp;
+            <button type="submit" name="submit" class="btn btn-danger">Edit</button>
             </div>
         </div>
     </form>

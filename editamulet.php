@@ -28,46 +28,86 @@ $row_show = mysql_fetch_array($result_show);
  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
  <link rel="stylesheet" type="text/css" href="css/style.css">
  <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> 
+ <link rel="stylesheet" href="css/stylemenu.css">
+ 
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
+            <span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
+        </nav>
+ 
+ 
+ 
+ 
 </head>
 <body>
- <a href="admin_page.php">HOME</a><br>
- <a href="addShop.php"> Add Shop </a><br>
- <a href="addmarket.php"> Add Market </a><br>
- <a href="addamulet.php"> Add Amulet </a><br>
- <a href="top10amulet.php"> Top10Amulet </a><br>
+ <br><br><br><br>
 
+    <form>
+        <div class="col-md-2 menuhref sidenav">
+            <ul class="nav nav-pills nav-stacked menuhref menu">
+                <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
+                <li class="menu"><a href="addamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet</a></li>
+                <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Market</a></li>
+                <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Shop</a></li>
+                <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
+            
+                <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top10Shop</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
+                <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
+                
+                <li class="menu"><a href="addShop.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            </ul>
+        </div>
+    </form>
+ 
 
-    <form action="saveEditAmulet.php" method="post" enctype="multipart/form-data">
+<form action="saveEditAmulet.php" method="post" enctype="multipart/form-data">
   <form class="form-addamulet">
-   <div class="form-addamulet">
-    <h2>Edit Amulet</h2>
-    ID  <input type="text" value="<?=$row_show['ID_Amulet']?>"  name="idA"  readonly /><br>
+      <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit Amulet : </font></span><br><br>
+      <div class="col-sm-3"></div>
+        <div class="col-md-3 form-addamulet">
+                        
+     <input class="form-control" type="text" value="<?=$row_show['ID_Amulet']?>"  name="idA"  readonly /><br>
 
-    ชื่อหลวงพ่อ / พระเกจิ <input type="text"  value="<?=$row_show['NameLP']?>" name="txtNameLP" id="txtNameLP"  >
+     <input class="form-control" type="text"  value="<?=$row_show['NameLP']?>" name="txtNameLP" id="txtNameLP" placeholder="ชื่อหลวงพ่อ / พระเกจิ" >
 
-    	
     <br>
-    <br>
-    เนื้อ/วัสดุ <select name="txtTypeAmulet">
-     <option value="<?=$row_show['Type_Name_Amulet']?>"><-- เนื้อ/วัสดุ --></option>
-     <?php
-     $strSQL = "SELECT * FROM  typeamulet ORDER BY Id_Type ASC";
-     $objQuery = mysql_query($strSQL);
-     while($objResuut = mysql_fetch_array($objQuery))
-     {
-      ?>
-      <option value="<?php echo $objResuut["Id_Type"];?>"><?php echo $objResuut["Type_Name_Amulet"];?></option>
-      <?php
-     }
-     ?>
-     </select><br><br> 
+    <select class="form-control" name="txtTypeAmulet">
+        <option value="<?=$row_show['Type_Name_Amulet']?>"><-- เนื้อ/วัสดุ --></option>
+        <?php
+            $strSQL = "SELECT * FROM  typeamulet ORDER BY Id_Type ASC";
+            $objQuery = mysql_query($strSQL);
+            while($objResuut = mysql_fetch_array($objQuery))
+            {
+        ?>
+            <option value="<?php echo $objResuut["Id_Type"];?>"><?php echo $objResuut["Type_Name_Amulet"];?></option>
+        <?php
+            }
+        ?>
+     </select><br>
 
-    ชื่อรุ่นพระเครื่อง <input type="text" value="<?=$row_show['Generation']?>" name="txtgeneration" id="txtgeneration" ><br> <!-- new -->
+    <input class="form-control" type="text" value="<?=$row_show['Generation']?>" name="txtgeneration" id="txtgeneration" placeholder="ชื่อรุ่นพระเครื่อง" ><br> <!-- new -->
 
-    ปีที่สร้าง <input type="text" value="<?=$row_show['YearAmulet']?>" name="txtyear" id="txtyear" placeholder="ปีที่สร้าง" ><br> <!-- new -->
+    <input class="form-control" type="text" value="<?=$row_show['YearAmulet']?>" name="txtyear" id="txtyear" placeholder="ปีที่สร้าง" ><br> <!-- new -->
 
-    ออกที่วัด <input type="text" value="<?=$row_show['Temple']?>" name="txttemple" id="txttemple" placeholder="ออกที่วัด" ><br> <!-- new -->
-    จังหวัด <input type="text" value="<?=$row_show['Province']?>" name="txtprovince" id="txtprovince" placeholder="จังหวัด" ><br> <!-- new -->
+    <input class="form-control" type="text" value="<?=$row_show['Temple']?>" name="txttemple" id="txttemple" placeholder="ออกที่วัด" ><br> <!-- new -->
+    
+    <input class="form-control" type="text" value="<?=$row_show['Province']?>" name="txtprovince" id="txtprovince" placeholder="จังหวัด" ><br> <!-- new -->
 
     <!-- <input type="text" name="txtTypeAmulet" value="" id="txtTypeAmulet" placeholder="ประเภทพระเครื่อง" /><br> -->
 
@@ -76,7 +116,7 @@ $row_show = mysql_fetch_array($result_show);
     Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br> -->
 
 
-    ชื่อเจ้าของพระ <input type="text" value="<?=$row_show['Name_Owner']?>" name="txtNameOwner" id="txtNameOwner" placeholder="ชื่อเจ้าของพระ" ><br>
+   <input class="form-control" type="text" value="<?=$row_show['Name_Owner']?>" name="txtNameOwner" id="txtNameOwner" placeholder="ชื่อเจ้าของพระ" ><br>
 
     Font Amulet<input type="file"  name="FrontPicture"   /><br>
 
@@ -86,13 +126,16 @@ $row_show = mysql_fetch_array($result_show);
 
     <!-- <button type="submit" name="submit">submit</button> -->
 
-    <input type="submit"  value="ยืนยันการแก้ไข" />
-        
-
-         
-         
-
-
+    <!--    <input type="submit"  value="ยืนยันการแก้ไข" />-->
+    
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="col-sm-4"></div>
+                <div class="buttonsubmit col-sm-4" align="right">
+                <button type="submit" name="submit" class="btn btn-danger">Edit</button>&nbsp;&nbsp;&nbsp;
+                <a href="top10amulet.php"<button type="reset" class="btn btn-danger">Cancel</button></a>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>    
 
    </div>
   </form>

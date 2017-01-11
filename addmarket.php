@@ -83,6 +83,7 @@ mysql_close();
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
             
                 <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
@@ -96,6 +97,7 @@ mysql_close();
     
 	<form action="addmarket.php" method="post" >
 		<form class="form-addmarket " >
+                    <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Market : </font></span><br><br>
                     <div class="col-md-3"></div>
 			<div class="form-addmerket col-md-3" >
                             <input class="form-control" type="text" value="" name="txtNameMarket" id="txtNameMarket" placeholder="ชื่อตลาดพระเครื่อง" autofocus="" /><br>

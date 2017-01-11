@@ -61,6 +61,7 @@ include 'config.php';
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
             
                 <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
@@ -78,14 +79,15 @@ include 'config.php';
     <form name="addshop" action="saveImage.php" method="post" enctype="multipart/form-data">
 	<form class="form-addShop">
 		<div class="form-addShop">
+                    <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Shop : </font></span><br><br>
                     <div class="row">
                         <div class="col-sm-3"></div>
+                        
                         <div class="col-sm-3">
-                            
-                            
+
                             
                         <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
-                        <span style=" text-align:center;"><font size="4">Logo Shop</font></span>
+                        <span style="color:white; text-align:center;"><font size="4">Logo Shop</font></span>
                         <input  type="file" value="" name="Img_Logo" id="Img_Logo" OnChange="Preview(this)" placeholder="รูปโลโก้ร้านค้า"/><br>
                         
                         
@@ -130,6 +132,7 @@ include 'config.php';
                 </div>
                 <div class="col-sm-4"></div>
             </div>
+                    
         </form>
     </form>
 </body>

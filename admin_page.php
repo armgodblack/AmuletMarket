@@ -30,7 +30,7 @@
 <body>
     <br><br><br><br>
     <form>
-        <div class="col-md-2 menuhref sidenav">
+        <div class="col-md-2 col-lg-2 menuhref sidenav">
             <ul class="nav nav-pills nav-stacked menu">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -40,7 +40,7 @@
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
             
                 <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
-                <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top10Shop</a></li>
+                <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Shop</a></li>
                 <li class="menu"><a href="managetop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
@@ -56,8 +56,7 @@
     
     
 <form> 
-    
-        <div class="col-md-9 widthcol9">
+        <div class="col-md-9 col-lg-9 widthcol9">
             <table height="70px">
                 <tr>
                     <td>
@@ -71,9 +70,10 @@
         </div>
     <br><br><br><br>
         
-    <div class="col-md-1"></div>
+    <div class="col-md-1 col-lg-1"></div>
 
-        <div class="col-md-3">
+
+    <div class="col-md-3 col-lg-3">
             
  <?php
     $sql = "SELECT * FROM addshop INNER JOIN market ON addshop.MarketAmuletShop= market.id_amuletmarket";
@@ -107,17 +107,10 @@
         }
         ?>
 
-        <div class="col-md-4">
- 
-
-        
-        </div>
-         <div class="col-md-1"></div>
-         
-         
-         <div class="col-md-3">
-             
-         </div>
+           
+         <div class="col-md-1 col-lg-1"></div>
+          
+         <div class="col-md-3 col-lg-3"></div>
 
 </form>
  

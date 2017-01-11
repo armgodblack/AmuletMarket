@@ -83,6 +83,7 @@ include 'config.php';
 
     <form name="addshop" action="savetop10shop.php" method="post" enctype="multipart/form-data">
 	<form class="form-addShop">
+            <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Top 10 Shop : </font></span><br><br>
 		<div class="form-addShop">
                     <div class="row">
                         <div class="col-sm-3"></div>

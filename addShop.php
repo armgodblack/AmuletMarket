@@ -115,7 +115,10 @@ include 'config.php';
                         <input class="form-control" type="text" value="" name="Facebook" id="Facebook" placeholder="facebook"/><br>
                         <input class="form-control" type="text" value="" name="Line1" id="Line1" placeholder="line"/><br>
                         <textarea class="form-control" maxlength="200" value="" name="Detail_Shop" id="Detail_Shop" placeholder="รายละเอียดของร้านค้า"></textarea><br>
-                        <input type="file" value="" name="Picture_Shop" id="Picture_Shop" placeeholder="รูปร้านค้า"/><br>
+                        <h3>รูปถ่ายหน้าร้าน</h3>
+                        <input type="file" value="" name="Picture_Shop" id="Picture_Shop" /><br>
+
+                        
                         
 			</div>
                         <div class="col-sm-4"></div>

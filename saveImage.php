@@ -25,6 +25,8 @@ $Line1=$_POST=$_POST['Line1'];
 $Detail_Shop=$_POST['Detail_Shop'];
 $Picture_Shop=$_POST['Picture_Shop'];
 $Img_Logo=$_POST['Img_Logo'];
+
+
 }
 else if(trim($_POST["Name_Shop1"]) == ""){
     echo "<script>alert('กรุณากรอกชื่อร้านพระเครื่อง.');</script>";
@@ -43,6 +45,9 @@ else if(trim($_POST["Name_Shop1"]) == ""){
 }else{
     $sql = "INSERT INTO addshop (`Name_Shop`,`Name_Owner`,`MarketAmuletShop`,`Phone`,`Facebook`,`Line`,`Detail_Shop`,`Picture_Shop`,`Img_Logo`,`pd_date`)
         Values ('$Name_Shop1','$Name_Owner','$MarketAmuletShop','$Phone','$Facebook','$Line1','$Detail_Shop','$newname','$newname','$date');";  
+
+
+
 echo "<script>alert('Save successfully.');</script>";     
 }
     
@@ -53,11 +58,16 @@ echo "<script>alert('Save successfully.');</script>";
 
          $target_dir = "C:\AppServ\www\AmuletMarket\Images\ImagesShop/";
          $target_dir2 = "C:\AppServ\www\AmuletMarket\Images\ImagesLogo/";
+         
+
          $target_file = $target_dir . basename($_FILES["Picture_Shop"]["name"]);
          $target_file2 = $target_dir2 . basename($_FILES["Img_Logo"]["name"]);
+      
+
          $uploadOk = 1;
          $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
          $imageFileType = pathinfo($target_file2,PATHINFO_EXTENSION);
+      
          // Check if image file is a actual image or fake image
 
          $check = getimagesize($_FILES["Picture_Shop"]["tmp_name"]);
@@ -72,8 +82,8 @@ echo "<script>alert('Save successfully.');</script>";
 
 
          $check2 = getimagesize($_FILES["Img_Logo"]["tmp_name"]);
-         if($check !== false) {
-             echo "File is an image - " . $check["mime"] . ".";
+         if($check2 !== false) {
+             echo "File is an image - " . $check2["mime"] . ".";
              $uploadOk = 1;
          } 
          else {
@@ -81,13 +91,15 @@ echo "<script>alert('Save successfully.');</script>";
              $uploadOk = 0;
          }
 
+        
+
 
 
 
  }  
 
 
-
+// PictureFontShop
          if (file_exists($target_file)) {
              echo "Sorry, file already exists.";
              $uploadOk = 0;
@@ -113,6 +125,7 @@ echo "<script>alert('Save successfully.');</script>";
              echo "Sorry, there was an error uploading your file.";
          }
 
+// PictureLogoShop
 
           if (file_exists($target_file2)) {
              echo "Sorry, file already exists.";
@@ -137,7 +150,7 @@ echo "<script>alert('Save successfully.');</script>";
          }
          else {
              echo "Sorry, there was an error uploading your file.";
-         }
+         }  
 
    
  }

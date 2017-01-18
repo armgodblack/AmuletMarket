@@ -76,3 +76,7 @@
 .container{
     margin-left: 125px ;
 }
+
+.nav>li>a{
+    padding: 8px 15px !important;
+}

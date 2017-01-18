@@ -55,7 +55,7 @@
     
     
 <form> 
-        <div class="col-md-9 col-lg-9 widthcol9">
+        <div class="col-md-9 widthcol9">
             <table height="70px">
                 <tr>
                     <td>
@@ -69,45 +69,76 @@
         </div>
     <br><br><br><br>
         
-    <div class="col-md-1 col-lg-1"></div>
+<div class="col-md-1"></div>
 
-
-    <div class="col-md-3 col-lg-3">
-            
+<div class="col-md-9">
+<!--    <div class="col-md-4">-->
+        
  <?php
     include 'config.php';
 
     $sql = "SELECT * FROM addshop INNER JOIN market ON addshop.MarketAmuletShop= market.id_amuletmarket";
     $result = mysql_query($sql);
     $path = "Images/ImagesLogo/";
- 
 
+echo "<table border=\"0\" cellspacing=\"1\" cellpadding=\"1\"><tr>";//Add
+$intRows = 0; //Add
     
  while($row = mysql_fetch_array($result))
-            {
+    {
+$intRows++; //Add
+echo "<td>"; //Add
 ?>
-         <td align="center"><a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
-          <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
+<div class="col-md-4">
+        <table width="0" border="0" cellspacing="0" cellpadding="0">
+        
+<!--            <tr> -->
+            <td align="center"><a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
+                <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
+                <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
+                <font size="4">
+                <td align="center"><?php echo $row["Name_Shop"];?></td><br>
+                 <td align=""><?php echo $row["Name_Market"];?></td>
+            </div></a>
+            </td>                    
+<!--            </tr>  -->
+                   
+        </table>
+</div><div class="col-md-1"></div>  
+        <?php
+        echo "</td>";
+        if(($intRows)%2==0){
+            echo "</tr>";
+        }
+        else{}
+    }
+    echo "</table>";
+        ?>
+     
+<!--         <td align="center"><a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php // echo $row["ID_Shop"];?>';}">
+          <div class="panel panel-info" name="idA" id=" <?php // echo $row["ID_Shop"];?>">
        
          
                 <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
                 <font size="4"><strong>
-                <td align="center"><?php echo $row["Name_Shop"];?></td><br>
-                <td align=""><?php echo $row["Name_Market"];?></td>
+                <td align="center"><?php // echo $row["Name_Shop"];?></td><br>
+                <td align=""><?php // echo $row["Name_Market"];?></td>
                 </a></td>
 
            
-          </div>
+          </div>-->
        
-        <?php
-        }
-        ?>
+<?php
+//    }
+?>
 
            
-         <div class="col-md-1 col-lg-1"></div>
+<!--         <div class="col-md-1"></div>
           
-         <div class="col-md-3 col-lg-3"></div>
+         <div class="col-md-4">-->
 
+<!--         </div>-->
+</div>
 </form>
  
  

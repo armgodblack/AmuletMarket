@@ -65,8 +65,8 @@ if($_REQUEST['ID_Shop'] != "")
 <body>
    <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 menuhref sidenav">
-            <ul class="nav nav-pills nav-stacked menu">
+        <div class="col-md-2 col-lg-2  sidenav">
+            <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
                 <li class="menu"><a href="addamulettoshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet To Shop</a></li>
@@ -81,7 +81,7 @@ if($_REQUEST['ID_Shop'] != "")
                 <li class="menu"><a href="statistic.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
             </ul>
         </div>
     </form>
@@ -89,11 +89,13 @@ if($_REQUEST['ID_Shop'] != "")
 
     <form name="addshop" action="saveEdittop10shop.php" method="post" enctype="multipart/form-data">
       <form class="form-addShop">
+          <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit TopShop : </font></span><br><br>
+          
          <div class="form-addShop">
-                    <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-3">
-            <h2>Edit Shop</h2>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                    <div class="col-sm-3">
+                           
             ID  <input type="text" value="<?=$row_show['ID_Shop']?>"  name="idA"  readonly /><br><br>
 
             <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;

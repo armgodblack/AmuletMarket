@@ -52,8 +52,8 @@ $row_show = mysql_fetch_array($result_show);
 <body>
  <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 menuhref sidenav">
-            <ul class="nav nav-pills nav-stacked menu">
+        <div class="col-md-2 col-lg-2  sidenav">
+            <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
                 <li class="menu"><a href="addamulettoshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet To Shop</a></li>
@@ -68,7 +68,7 @@ $row_show = mysql_fetch_array($result_show);
                 <li class="menu"><a href="statistic.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
             </ul>
         </div>
     </form>
@@ -76,7 +76,7 @@ $row_show = mysql_fetch_array($result_show);
 
 <form action="saveEditAmulet.php" method="post" enctype="multipart/form-data">
   <form class="form-addamulet">
-      <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit Amulet : </font></span><br><br>
+      <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit TopAmulet : </font></span><br><br>
       <div class="col-sm-3"></div>
         <div class="col-md-3 form-addamulet">
                         

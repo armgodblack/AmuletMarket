@@ -13,11 +13,13 @@
     margin-bottom: 0px;
 }
         
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 1200px) { 
     .row.content {
         height: auto;
         } 
 }
+
+
 
 
 /*------menu-----*/
@@ -46,9 +48,9 @@
     ;
 }
 
-.menu{
+/*.menu{
     position: fixed;
-}
+}*/
 
 /*------end menu-----*/
 
@@ -80,3 +82,4 @@
 .nav>li>a{
     padding: 8px 15px !important;
 }
+

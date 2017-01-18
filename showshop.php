@@ -125,6 +125,7 @@ if($_REQUEST['ID_Shop'] != "")
         <th width="200"> <div align="center">รูป</div></th>
         <th width="300"> <div align="center">ชื่อพระเครื่อง</div></th>
         <th width="300"> <div align="center">รุ่น</div></th>
+      
         </tr>
     </thead>
 
@@ -140,14 +141,21 @@ $db_query=mysql_query($sql_Shop);
 
 
 
-   $index = 1;
+   
 while($objResult2 = mysql_fetch_array($db_query))
 {
 ?>
     <tr>
+        <li align="center" name="idA" id="<?php echo $objResult2['ID_amulet']; ?>">
+        <a  href="JavaScript:if(confirm('Confirm Edit?')==true){window.location='editamulettoshop.php?ID_amulet=<?php echo $objResult2["ID_amulet"];?>';}">Edit</a>
+        </li>
+
+
         <td align="center"> <img src="<? echo $pathAmulet1.$objResult2['ImgAmulet1']; ?>" width="150" height="170" border="3" /> </td>
         <td ><div align="center" name="idA"><?php echo $objResult2["NameAmulet1"];?></div></td>
         <td ><div align="center" name="idA"><?php echo $objResult2["GenAmulet1"];?></div></td>
+        
+        
     </tr>
 
     <tr>
@@ -205,7 +213,7 @@ while($objResult2 = mysql_fetch_array($db_query))
     </tr>
     
         <?php
-     $index++;
+     
             }
         ?>
 

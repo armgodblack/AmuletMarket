@@ -34,6 +34,11 @@
             <ul class="nav nav-pills nav-stacked menu">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
+<<<<<<< HEAD
+=======
+                <li class="menu"><a href="addamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet Top 10</a></li>
+                <li class="menu"><a href="addamulettoshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet To Shop</a></li>
+>>>>>>> origin/master
                 <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Market</a></li>
                 <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Shop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
@@ -76,33 +81,30 @@
     <div class="col-md-3 col-lg-3">
             
  <?php
+    include 'config.php';
+
     $sql = "SELECT * FROM addshop INNER JOIN market ON addshop.MarketAmuletShop= market.id_amuletmarket";
     $result = mysql_query($sql);
     $path = "Images/ImagesLogo/";
  
 
-     while($row = mysql_fetch_array($result)) {
-//         echo "ID: " . $row["ID_Shop"]. " " . $row["Name_Shop"]. " " .$row["Name_Market"]."<br>";
+    
+ while($row = mysql_fetch_array($result))
+            {
 ?>
-            <div class="panel panel-info">
-                <a href="addShop.php"><div class="panel-body">
-                    <table >
-                    <tr>
-                        <td>
-                            <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
-                            <font size="4"><strong>
-                        <?php
-                            echo "". $row["Name_Shop"]."";
-                        ?>
-                                </strong>
-                            </font>
-                        </td>
-                        
-                    </tr>
-                    </table>
-                </div></a>
-            </div><br>
-            
+         <td align="center"><a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
+          <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
+       
+         
+                <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
+                <font size="4"><strong>
+                <td align="center"><?php echo $row["Name_Shop"];?></td><br>
+                <td align=""><?php echo $row["Name_Market"];?></td>
+                </a></td>
+
+           
+          </div>
+       
         <?php
         }
         ?>

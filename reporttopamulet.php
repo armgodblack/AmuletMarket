@@ -6,7 +6,7 @@ include 'config.php';
 
 <html>
 <head>
-	<title>Report Shop</title>
+	<title>Report TopChart Amulet.</title>
 	<meta charset="UTF-8">
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="css/style.css">
@@ -26,10 +26,9 @@ include 'config.php';
 		<a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
 		<span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
 	</nav>
-
 </head>
 <body>
-	<br><br><br><br>
+<br><br><br><br>
 	<form>
 		<div class="col-md-2 col-lg-2  sidenav">
 			<ul class="nav nav-pills nav-stacked ">
@@ -51,31 +50,28 @@ include 'config.php';
 			</ul>
 		</div>
 	</form>
-
 	<!-- ********************************************************************************************* -->
-	
-	<span style="color:white; text-align: center; "><font size="6">&nbsp;&nbsp;ตารางแสดงรายชื่อร้านค้าทั้งหมด</font></span><br><br>
+	<span style="color:white; text-align: center; "><font size="6">&nbsp;&nbsp;ตารางแสดงรายการพระเครื่องยอดนิยม</font></span><br><br>
 	<table id="sort" class="grid container" border="1px">
 		<thead>
 			<tr>
 				<th width="150"><th width="200"> <div align="center">รหัส</div></th>
-				<th width="200"> <div align="center">ชื่อร้าน</div></th>
-				<th width="300"> <div align="center">ชื่อเจ้าของร้าน</div></th>
-				<th width="700"> <div align="center">ตลาดพระ</div></th>
-				<th width="200"> <div align="center">เบอร์ร้าน</div></th>
-				<th width="100"> <div align="center">เฟสบุ๊ก</div></th>
-				<th width="200"> <div align="center">ไลน์</div></th>
-
+				<th width="200"> <div align="center">เจ้าของพระ</div></th>
+				<th width="300"> <div align="center">หลวงพ่อ/เกจิ</div></th>
+				<th width="700"> <div align="center">เนื้อ/วัสดุ</div></th>
+				<th width="200"> <div align="center">รุ่น</div></th>
+				<th width="100"> <div align="center">ปี</div></th>
+				<th width="200"> <div align="center">วัด</div></th>
+				<th width="200"> <div align="center">จังหวัด</div></th>
 				<th width="400"> <div align="center">Update ล่าสุด</div></th>  
 			</tr>
 		</thead>
 
 		<tbody>
-
 			<?php
 			include 'config.php';
 
-			$sql = "SELECT * FROM addshop INNER JOIN market ON addshop.MarketAmuletShop= market.id_amuletmarket";
+			$sql = "SELECT * FROM amulet INNER JOIN typeamulet ON amulet.TypeAmulet= typeamulet.Id_Type";
 			$db_query=mysql_query($sql);
 			$index = 1;
 			while($objResult = mysql_fetch_array($db_query))
@@ -85,14 +81,14 @@ include 'config.php';
 
 				<tr>                    
 					<td align="center"   class="index"><?php echo $index; ?></td>
-					<td ><div align="center" name="idA"><?php echo $objResult["ID_Shop"];?></div></td>
-					<td align="center"><?php echo $objResult["Name_Shop"];?></td>
-					<td align="center" ><?php echo $objResult["Name_Owner"];?></td>
-					<td align="center"><?php echo $objResult["Name_Market"];?></td>
-					<td align="center"><?php echo $objResult["Phone"];?></td>
-					<td align="center"><?php echo $objResult["Facebook"];?></td>
-					<td align="center"><?php echo $objResult["Line"];?></td>
-
+					<td ><div align="center" name="idA"><?php echo $objResult["ID_Amulet"];?></div></td>
+					<td align="center"><?php echo $objResult["Name_Owner"];?></td>
+					<td align="center" ><?php echo $objResult["NameLP"];?></td>
+					<td align="center"><?php echo $objResult["Type_Name_Amulet"];?></td>
+					<td align="center"><?php echo $objResult["Generation"];?></td>
+					<td align="center"><?php echo $objResult["YearAmulet"];?></td>
+					<td align="center"><?php echo $objResult["Temple"];?></td>
+					<td align="center"><?php echo $objResult["Province"];?></td>
 					<td align="center"><?php echo $objResult["pd_date"];?></td>
 
 
@@ -103,23 +99,9 @@ include 'config.php';
 			}
 			?>
 
-
-
-
-		</tbody>    
-
-
-
-
+		</tbody>
 
 	</table>
-
-
-
-
-
-
-	<span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReport.php">here</a> to Download</font></span>
-
+		<span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReporttopamulet.php">here</a> to Download</font></span>
 </body>
 </html>

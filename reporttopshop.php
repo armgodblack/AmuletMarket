@@ -6,7 +6,7 @@ include 'config.php';
 
 <html>
 <head>
-	<title>Report Shop</title>
+	<title>Report TopChart Shop</title>
 	<meta charset="UTF-8">
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="css/style.css">
@@ -26,10 +26,9 @@ include 'config.php';
 		<a href="admin_page.php"><img src="AmuletMarket.png" class="img-circle" width="80" height="80"></a>
 		<span style="color:white; text-align:center;"><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Administrator Amulet</font></span>
 	</nav>
-
 </head>
 <body>
-	<br><br><br><br>
+<br><br><br><br>
 	<form>
 		<div class="col-md-2 col-lg-2  sidenav">
 			<ul class="nav nav-pills nav-stacked ">
@@ -51,10 +50,8 @@ include 'config.php';
 			</ul>
 		</div>
 	</form>
-
 	<!-- ********************************************************************************************* -->
-	
-	<span style="color:white; text-align: center; "><font size="6">&nbsp;&nbsp;ตารางแสดงรายชื่อร้านค้าทั้งหมด</font></span><br><br>
+	<span style="color:white; text-align: center; "><font size="6">&nbsp;&nbsp;ตารางแสดงรายชื่อร้านค้ายอดนิยมทั้งหมด</font></span><br><br>
 	<table id="sort" class="grid container" border="1px">
 		<thead>
 			<tr>
@@ -65,17 +62,15 @@ include 'config.php';
 				<th width="200"> <div align="center">เบอร์ร้าน</div></th>
 				<th width="100"> <div align="center">เฟสบุ๊ก</div></th>
 				<th width="200"> <div align="center">ไลน์</div></th>
-
 				<th width="400"> <div align="center">Update ล่าสุด</div></th>  
 			</tr>
 		</thead>
 
 		<tbody>
-
 			<?php
 			include 'config.php';
 
-			$sql = "SELECT * FROM addshop INNER JOIN market ON addshop.MarketAmuletShop= market.id_amuletmarket";
+			$sql = "SELECT * FROM top10shop INNER JOIN market ON top10shop.MarketAmuletShop= market.id_amuletmarket";
 			$db_query=mysql_query($sql);
 			$index = 1;
 			while($objResult = mysql_fetch_array($db_query))
@@ -103,23 +98,10 @@ include 'config.php';
 			}
 			?>
 
-
-
-
-		</tbody>    
-
-
-
-
+		</tbody>
 
 	</table>
 
-
-
-
-
-
-	<span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReport.php">here</a> to Download</font></span>
-
+		<span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReporttopshop.php">here</a> to Download</font></span>
 </body>
 </html>

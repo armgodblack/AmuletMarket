@@ -91,7 +91,8 @@ if($_REQUEST['ID_Shop'] != "")
              <div >   
                 <?php echo $row_show["Name_Shop"];?><br/>
                 <?php echo $objResult["Name_Market"];?><br/>
-                Phone : <?php echo $row_show["Phone"];?> Line : <?php echo $row_show["Line"]; ?> Facebook : <?php echo $row_show["Facebook"]; ?>
+                ติดต่อเจ้าของร้าน : คุณ <?php echo $row_show["Name_Owner"]; ?><br/>
+                Phone : <?php echo $row_show["Phone"];?>  Line : <?php echo $row_show["Line"]; ?> Facebook : <?php echo $row_show["Facebook"]; ?> 
             </div> 
     </div>       
             

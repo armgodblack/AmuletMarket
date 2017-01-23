@@ -83,7 +83,7 @@ if($_REQUEST['ID_Shop'] != "")
         </div>
     </form>
 
-    <form name="addshop" action="saveEdittop10shop.php" method="post" enctype="multipart/form-data">
+    <form name="addshop" action="saveEditshop.php" method="post" enctype="multipart/form-data">
     	<form class="form-addShop">
     	<span style="color:white; "><font size="6">&nbsp;&nbsp;Edit Shop : </font></span><br><br>
     		<div class="form-addShop">
@@ -117,13 +117,21 @@ if($_REQUEST['ID_Shop'] != "")
 							</input><br>
 							<h3>รูปถ่ายหน้าร้าน</h3>
                         	<input type="file" value="" name="Picture_Shop" id="Picture_Shop" /><br>
+                            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="col-sm-4"></div>
+                <div class="buttonsubmit col-sm-4" align="right">
+                <button type="submit" name="submit" class="btn btn-danger">Edit</button>&nbsp;&nbsp;&nbsp;
+                <a href="admin_page.php"<button type="reset" class="btn btn-danger">Cancel</button></a>
+                </div>
+                <div class="col-sm-4"></div>
+        </div>
                 	</div>
                 </div>    		
             </div>        		
     	</form>	
     </form>
 
-
+    
 
 
 

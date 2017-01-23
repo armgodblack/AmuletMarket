@@ -89,30 +89,47 @@ $intRows = 0; //Add
 $intRows++; //Add
 echo "<td>"; //Add
 ?>
-<div class="col-md-4">
+<div class="">
         <table width="0" border="0" cellspacing="0" cellpadding="0">
         
 <!--            <tr> -->
-            <td align="center"><a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
+            <font style="padding-left: 202px;" size="2"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='deleteShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">Delete</a>
+
+            <font style="padding-left: 16px;" size="2"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='editShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">Edit</a>  
+              
+            <a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
+
                 <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
+
                 <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
-                <font size="4">
-                <td align="center"><?php echo $row["Name_Shop"];?></td><br>
-                 <td align=""><?php echo $row["Name_Market"];?></td>
+
+                <font  size="4"><?php echo $row["Name_Shop"];?><br/><?php echo $row["Name_Market"];?><br/>
+
+                
             </div></a>
-            </td>                    
+                                
 <!--            </tr>  -->
                    
         </table>
-</div><div class="col-md-1"></div>  
+
+
+</div>
+
+<div class="col-md-1"></div>  
         <?php
         echo "</td>";
         if(($intRows)%2==0){
             echo "</tr>";
         }
         else{}
+
+
+
     }
     echo "</table>";
+
+
+
         ?>
      
 <!--         <td align="center"><a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php // echo $row["ID_Shop"];?>';}">

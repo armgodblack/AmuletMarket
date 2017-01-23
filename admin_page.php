@@ -30,20 +30,20 @@
 <body>
     <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2  sidenav">
+        <div class="col-md-2 col-lg-2 sidenav">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
                 <li class="menu"><a href="addamulettoshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet To Shop</a></li>
                 <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Market</a></li>
             
-                <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href=""><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
                 <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Shop</a></li>
                 <li class="menu"><a href="addamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Amulet</a></li>
                 <li class="menu"><a href="managetop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
-                <li class="menu"><a href="statistic.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
@@ -91,22 +91,33 @@ $intRows++; //Add
 ?>
 <div class="col-md-4">
         <table width="0" border="0" cellspacing="0" cellpadding="0">
-        
+        <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
 <!--            <tr> -->
-            <font style="padding-left: 202px;" size="2"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='deleteShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">Delete</a>
+            
+            <div align='right'><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='editShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}" style="text-decoration:none">
+            <button type="button" class="btn btn-default btn btn-info">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </button>
+            </a></div>
 
-            <font style="padding-left: 16px;" size="2"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='editShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">Edit</a>  
-              
-            <a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
-                
-                <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
+            <a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}" style="text-decoration:none">
+            <div class="" name="idA" id=" <?php echo $row["ID_Shop"];?>">    
+<!--<div class="panel panel-info" name="idA" id=" <?php // echo $row["ID_Shop"];?>">-->
 
-                <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
 
-                <font  size="4"><?php echo $row["Name_Shop"];?><br/><?php echo $row["Name_Market"];?><br/>
+                <font size="4"><?php echo $row["Name_Shop"];?><br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp<?php echo $row["Name_Market"];?><br>
 
-                
             </div></a>
+            
+            <a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='deleteShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}" style="text-decoration:none">
+            <div align='right'><button type="button" class="btn btn-default btn btn-danger">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button></div>
+            </a>
+        
+        </div>
                                
 <!--            </tr>  -->
                    

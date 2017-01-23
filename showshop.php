@@ -55,24 +55,23 @@ if($_REQUEST['ID_Shop'] != "")
 <body>
 <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 menuhref sidenav">
-            <ul class="nav nav-pills nav-stacked menu">
+        <div class="col-md-2 col-lg-2  sidenav">
+            <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
-                <li class="menu"><a href="addamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet</a></li>
+                <li class="menu"><a href="addamulettoshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Amulet To Shop</a></li>
                 <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Market</a></li>
-                <li class="menu"><a href="addmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Shop</a></li>
-                <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Amulet</a></li>
             
-                <li class="menu"><a href="addShop.php"><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
+                <li class="menu"><a href=""><img src="statistics.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageTopChart</strong></a></li>
                 <li class="menu"><a href="addtop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Shop</a></li>
+                <li class="menu"><a href="addamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Top 10 Amulet</a></li>
                 <li class="menu"><a href="managetop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
-                <li class="menu"><a href="addShop.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
             </ul>
         </div>
     </form>
@@ -87,13 +86,16 @@ if($_REQUEST['ID_Shop'] != "")
     ?>
     <div class="col-md-9 col-lg-9 widthcol9 text-center">
     <br/>
-        <img class="img-circle" src="<? echo $path.$row_show['Img_Logo']; ?>" width="150" height="150"  border-radius="50px"/>&nbsp&nbsp&nbsp&nbsp 
-             <div >   
-                <?php echo $row_show["Name_Shop"];?><br/>
-                <?php echo $objResult["Name_Market"];?><br/>
-                ติดต่อเจ้าของร้าน : คุณ <?php echo $row_show["Name_Owner"]; ?><br/>
-                Phone : <?php echo $row_show["Phone"];?>  Line : <?php echo $row_show["Line"]; ?> Facebook : <?php echo $row_show["Facebook"]; ?> 
-            </div> 
+    <img class="img-circle" src="<? echo $path.$row_show['Img_Logo']; ?>" width="150" height="150"  border-radius="50px"/><br>&nbsp&nbsp&nbsp&nbsp 
+             <div>
+                <span style="color:white; text-align:center;"><font size="4">   
+                    <?php echo $row_show["Name_Shop"];?><br/>
+                    <?php echo $objResult["Name_Market"];?><br/>
+                    ติดต่อเจ้าของร้าน : คุณ <?php echo $row_show["Name_Owner"]; ?><br/>
+                    Phone : <?php echo $row_show["Phone"];?>  Line : <?php echo $row_show["Line"]; ?> Facebook : <?php echo $row_show["Facebook"]; ?> 
+                </span></font>
+             </div>
+    <br>
     </div>       
             
         
@@ -107,22 +109,28 @@ if($_REQUEST['ID_Shop'] != "")
     </div>
 
     <div class="text-center">
-        <br/><br/>
+        <br><br>
+        <span style="color:white; text-align:center;"><font size="4">
         <td ><?php echo $row_show["Detail_Shop"];?></td>
-        <br/><br/>
+        </span></font>
+        <br><br>
     </div>
 
 
     <div class="col-md-9 col-lg-9 widthcol9 text-center" >
-    <br/>
-        <td> TOP 10 AMULET TO SHOP </td>
-    <br/>
-    </div>
+    <br>
+        <span style="color:white; text-align:center;"><font size="4">
+            <h4><strong><td> TOP 10 AMULET TO SHOP </td></strong></h4>
+        </span></font>
+    <br>
+    </div><br><br>
 
+     
 <table id="" class="grid container" border="1px">
     <thead>
+    
         <tr>
-        
+            
         <th width="200"> <div align="center">รูป</div></th>
         <th width="300"> <div align="center">ชื่อพระเครื่อง</div></th>
         <th width="300"> <div align="center">รุ่น</div></th>
@@ -147,10 +155,22 @@ while($objResult2 = mysql_fetch_array($db_query))
 {
 ?>
     <tr>
-        <li align="center" name="idA" id="<?php echo $objResult2['ID_amulet']; ?>">
-        <a  href="JavaScript:if(confirm('Confirm Edit?')==true){window.location='editamulettoshop.php?ID_amulet=<?php echo $objResult2["ID_amulet"];?>';}">Edit</a>
-        </li>
-
+        <div class="col-md-4"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        
+        <div align="left" name="idA" id="<?php echo $objResult2['ID_amulet']; ?>">
+        <a  href="JavaScript:if(confirm('Confirm Edit?')==true){window.location='editamulettoshop.php?ID_amulet=<?php echo $objResult2["ID_amulet"];?>';}">
+            <div align='right' class="col-md-1" style="padding-top: 10px; padding-bottom: 10px">
+            <button type="button" class="btn btn-default btn btn-info">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> แก้ไขทั้งหมด
+            </button>
+            </div>    
+        </a>
+        </div>
+        
 
         <td align="center"> <img src="<? echo $pathAmulet1.$objResult2['ImgAmulet1']; ?>" width="150" height="170" border="3" /> </td>
         <td ><div align="center" name="idA"><?php echo $objResult2["NameAmulet1"];?></div></td>

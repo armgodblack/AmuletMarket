@@ -71,8 +71,8 @@
         
 <div class="col-md-1"></div>
 
-<div class="col-md-9">
-<!--    <div class="col-md-4">-->
+<!--<div class="col-md-9">-->
+    <div class="col-md-4">
         
  <?php
     include 'config.php';
@@ -87,9 +87,9 @@ $intRows = 0; //Add
  while($row = mysql_fetch_array($result))
     {
 $intRows++; //Add
-echo "<td>"; //Add
+//echo "<td>"; //Add
 ?>
-<div class="">
+<div class="col-md-4">
         <table width="0" border="0" cellspacing="0" cellpadding="0">
         
 <!--            <tr> -->
@@ -98,7 +98,7 @@ echo "<td>"; //Add
             <font style="padding-left: 16px;" size="2"><a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='editShop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">Edit</a>  
               
             <a href="JavaScript:if(confirm('ยืนยันที่จะดูหน้าร้าน?')==true){window.location='showshop.php?ID_Shop=<?php echo $row["ID_Shop"];?>';}">
-
+                
                 <div class="panel panel-info" name="idA" id=" <?php echo $row["ID_Shop"];?>">
 
                 <img src="<? echo $path.$row['Img_Logo']; ?>" width="100" height="100" border="3"/>&nbsp&nbsp&nbsp&nbsp
@@ -107,17 +107,17 @@ echo "<td>"; //Add
 
                 
             </div></a>
-                                
+                               
 <!--            </tr>  -->
                    
         </table>
-
+<!--</div>-->
 
 </div>
 
 <div class="col-md-1"></div>  
         <?php
-        echo "</td>";
+//        echo "</td>";
         if(($intRows)%2==0){
             echo "</tr>";
         }

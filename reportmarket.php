@@ -6,7 +6,7 @@ include 'config.php';
 
 <html>
 <head>
-	<title>Report TopChart Amulet.</title>
+	<title>Report Market</title>
 	<meta charset="UTF-8">
 	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="css/style.css">
@@ -28,7 +28,7 @@ include 'config.php';
 	</nav>
 </head>
 <body>
-<br><br><br><br>
+	 <br><br><br><br>
     <form>
         <div class="col-md-2 col-lg-2 sidenav">
             <ul class="nav nav-pills nav-stacked ">
@@ -51,20 +51,23 @@ include 'config.php';
             </ul>
         </div>
     </form>
-	<!-- ********************************************************************************************* -->
-	<span style="color:white; text-align: center; "><font size="6">&nbsp;&nbsp;ตารางแสดงรายการพระเครื่องยอดนิยม</font></span><br><br>
-	<table id="sort" class="grid container" border="1px">
-		<thead>
+    <!-- ********************************************************************************************* -->
+
+    <span style="color:white; text-align: center; "><font size="6">&nbsp;&nbsp;ตารางแสดงตลาดพระเครื่องทั้งหมด</font></span><br><br>
+
+    <table id="sort" class="grid container" border="1px">
+    	<thead>
 			<tr>
 				<th width="150"><th width="200"> <div align="center">รหัส</div></th>
-				<th width="200"> <div align="center">เจ้าของพระ</div></th>
-				<th width="300"> <div align="center">หลวงพ่อ/เกจิ</div></th>
-				<th width="700"> <div align="center">เนื้อ/วัสดุ</div></th>
-				<th width="200"> <div align="center">รุ่น</div></th>
-				<th width="100"> <div align="center">ปี</div></th>
-				<th width="200"> <div align="center">วัด</div></th>
+				<th width="900"> <div align="center">ชื่อตลาดพระ</div></th>
+				<th width="500"> <div align="center">ที่อยู่</div></th>
+				<th width="200"> <div align="center">เขต/อำเภอ</div></th>
+				<th width="200"> <div align="center">แขวง/ตำบล</div></th>
+				<th width="100"> <div align="center">ไปรษณีย์</div></th>
 				<th width="200"> <div align="center">จังหวัด</div></th>
-				<th width="400"> <div align="center">Update ล่าสุด</div></th>  
+				<th width="200"> <div align="center">เบอร์โทรร้าน</div></th>
+				<th width="200"> <div align="center">เบอร์โทรเจ้าของร้าน</div></th>
+				<th width="300"> <div align="center">เวลาทำการ</div></th>  
 			</tr>
 		</thead>
 
@@ -72,7 +75,7 @@ include 'config.php';
 			<?php
 			include 'config.php';
 
-			$sql = "SELECT * FROM amulet INNER JOIN typeamulet ON amulet.TypeAmulet= typeamulet.Id_Type";
+			$sql = "SELECT * FROM market ";
 			$db_query=mysql_query($sql);
 			$index = 1;
 			while($objResult = mysql_fetch_array($db_query))
@@ -82,15 +85,16 @@ include 'config.php';
 
 				<tr>                    
 					<td align="center"   class="index"><?php echo $index; ?></td>
-					<td ><div align="center" name="idA"><?php echo $objResult["ID_Amulet"];?></div></td>
-					<td align="center"><?php echo $objResult["Name_Owner"];?></td>
-					<td align="center" ><?php echo $objResult["NameLP"];?></td>
-					<td align="center"><?php echo $objResult["Type_Name_Amulet"];?></td>
-					<td align="center"><?php echo $objResult["Generation"];?></td>
-					<td align="center"><?php echo $objResult["YearAmulet"];?></td>
-					<td align="center"><?php echo $objResult["Temple"];?></td>
+					<td ><div align="center" name="idA"><?php echo $objResult["id_amuletmarket"];?></div></td>
+					<td align="center"><?php echo $objResult["Name_Market"];?></td>
+					<td align="center" ><?php echo $objResult["Address"];?></td>
+					<td align="center"><?php echo $objResult["Zone"];?></td>
+					<td align="center"><?php echo $objResult["Canton"];?></td>
+					<td align="center"><?php echo $objResult["Zipcode"];?></td>
 					<td align="center"><?php echo $objResult["Province"];?></td>
-					<td align="center"><?php echo $objResult["pd_date"];?></td>
+					<td align="center"><?php echo $objResult["TelOffice"];?></td>
+					<td align="center"><?php echo $objResult["TelOwner"];?></td>
+					<td align="center"><?php echo $objResult["Time"];?></td>
 
 
 
@@ -102,7 +106,10 @@ include 'config.php';
 
 		</tbody>
 
-	</table>
-		<span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReporttopamulet.php">here</a> to Download</font></span>
+
+    </table>
+    <span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReportMarket.php">here</a> to Download</font></span>
+
+
 </body>
 </html>

@@ -52,7 +52,7 @@ $row_show = mysql_fetch_array($result_show);
 <body>
  <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2  sidenav">
+        <div class="col-md-2 col-lg-2  sidenav" style="position: fixed;">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -66,46 +66,47 @@ $row_show = mysql_fetch_array($result_show);
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
                 <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
+                <li class="menu"><a href="reportmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Market</a></li>
+                <li class="menu"><a href="reportshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
+                <li class="menu"><a href="reporttopshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
+                <li class="menu"><a href="reporttopamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
             </ul>
         </div>
     </form>
  
 
-<form action="saveEditAmulet.php" method="post" enctype="multipart/form-data">
-  <form class="form-addamulet">
-      <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit TopAmulet : </font></span><br><br>
-      <div class="col-sm-3"></div>
-        <div class="col-md-3 form-addamulet">
+<div class="col-md-2"></div> 
+    <form action="saveEditAmulet.php" method="post" enctype="multipart/form-data">
+        <form class="form-addamulet">
+            <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit TopAmulet : </font></span><br><br>
+                <div class="col-sm-5"></div>
+                <div class="col-md-3 form-addamulet">
                         
-     <input class="form-control" type="text" value="<?=$row_show['ID_Amulet']?>"  name="idA"  readonly /><br>
+                <input class="form-control" type="text" value="<?=$row_show['ID_Amulet']?>"  name="idA"  readonly /><br>
 
-     <input class="form-control" type="text"  value="<?=$row_show['NameLP']?>" name="txtNameLP" id="txtNameLP" placeholder="ชื่อหลวงพ่อ / พระเกจิ" >
+                <input class="form-control" type="text"  value="<?=$row_show['NameLP']?>" name="txtNameLP" id="txtNameLP" placeholder="ชื่อหลวงพ่อ / พระเกจิ" ><br>
+                
+                <select class="form-control" name="txtTypeAmulet">
+                    <option value="<?=$row_show['Type_Name_Amulet']?>"><-- เนื้อ/วัสดุ --></option>
+                        <?php
+                            $strSQL = "SELECT * FROM  typeamulet ORDER BY Id_Type ASC";
+                            $objQuery = mysql_query($strSQL);
+                            while($objResuut = mysql_fetch_array($objQuery))
+                            {
+                        ?>
+                            <option value="<?php echo $objResuut["Id_Type"];?>"><?php echo $objResuut["Type_Name_Amulet"];?></option>
+                        <?php
+                            }
+                        ?>
+                </select><br>
 
-    <br>
-    <select class="form-control" name="txtTypeAmulet">
-        <option value="<?=$row_show['Type_Name_Amulet']?>"><-- เนื้อ/วัสดุ --></option>
-        <?php
-            $strSQL = "SELECT * FROM  typeamulet ORDER BY Id_Type ASC";
-            $objQuery = mysql_query($strSQL);
-            while($objResuut = mysql_fetch_array($objQuery))
-            {
-        ?>
-            <option value="<?php echo $objResuut["Id_Type"];?>"><?php echo $objResuut["Type_Name_Amulet"];?></option>
-        <?php
-            }
-        ?>
-     </select><br>
+                <input class="form-control" type="text" value="<?=$row_show['Generation']?>" name="txtgeneration" id="txtgeneration" placeholder="ชื่อรุ่นพระเครื่อง" ><br> <!-- new -->
 
-    <input class="form-control" type="text" value="<?=$row_show['Generation']?>" name="txtgeneration" id="txtgeneration" placeholder="ชื่อรุ่นพระเครื่อง" ><br> <!-- new -->
+                <input class="form-control" type="text" value="<?=$row_show['YearAmulet']?>" name="txtyear" id="txtyear" placeholder="ปีที่สร้าง" ><br> <!-- new -->
 
-    <input class="form-control" type="text" value="<?=$row_show['YearAmulet']?>" name="txtyear" id="txtyear" placeholder="ปีที่สร้าง" ><br> <!-- new -->
-
-    <input class="form-control" type="text" value="<?=$row_show['Temple']?>" name="txttemple" id="txttemple" placeholder="ออกที่วัด" ><br> <!-- new -->
+                <input class="form-control" type="text" value="<?=$row_show['Temple']?>" name="txttemple" id="txttemple" placeholder="ออกที่วัด" ><br> <!-- new -->
     
-    <input class="form-control" type="text" value="<?=$row_show['Province']?>" name="txtprovince" id="txtprovince" placeholder="จังหวัด" ><br> <!-- new -->
+                <input class="form-control" type="text" value="<?=$row_show['Province']?>" name="txtprovince" id="txtprovince" placeholder="จังหวัด" ><br> <!-- new -->
 
     <!-- <input type="text" name="txtTypeAmulet" value="" id="txtTypeAmulet" placeholder="ประเภทพระเครื่อง" /><br> -->
 
@@ -114,11 +115,16 @@ $row_show = mysql_fetch_array($result_show);
     Back Amulet <input type="file" value="" name="BackPicture" id="BackPicture" /><br> -->
 
 
-   <input class="form-control" type="text" value="<?=$row_show['Name_Owner']?>" name="txtNameOwner" id="txtNameOwner" placeholder="ชื่อเจ้าของพระ" ><br>
+                <input class="form-control" type="text" value="<?=$row_show['Name_Owner']?>" name="txtNameOwner" id="txtNameOwner" placeholder="ชื่อเจ้าของพระ" ><br>
 
-    Font Amulet<input type="file"  name="FrontPicture"   /><br>
+                <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
+                <span style="color:white; text-align:center;"><font size="3">Font Amulet</font></span>
+                <input  type="file" value="" name="FrontPicture" id="FrontPicture" OnChange="showPreview(this)" placeholder="FrontPicture"/><br>
 
-    Back Amulet <input type="file"  name="BackPicture"  /><br>
+                <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
+                <span style="color:white; text-align:center;"><font size="3">Back Amulet</font></span>
+                <input  type="file" value="" name="BackPicture" id="BackPicture" OnChange="showPreview(this)" placeholder="BackPicture"/><br><br><br><br><br>
+
 
 
 
@@ -126,18 +132,18 @@ $row_show = mysql_fetch_array($result_show);
 
     <!--    <input type="submit"  value="ยืนยันการแก้ไข" />-->
     
-        <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <div class="col-sm-4"></div>
-                <div class="buttonsubmit col-sm-4" align="right">
-                <button type="submit" name="submit" class="btn btn-danger">Edit</button>&nbsp;&nbsp;&nbsp;
-                <a href="top10amulet.php"<button type="reset" class="btn btn-danger">Cancel</button></a>
-                </div>
-                <div class="col-sm-4"></div>
-        </div>    
+                <div class="navbar navbar-inverse navbar-fixed-bottom">
+                    <div class="col-sm-4"></div>
+                        <div class="buttonsubmit col-sm-4" align="right">
+                            <button type="submit" name="submit" class="btn btn-danger">Edit</button>&nbsp;&nbsp;&nbsp;
+                            <a href="top10amulet.php"<button type="reset" class="btn btn-danger">Cancel</button></a>
+                        </div>
+                    <div class="col-sm-4"></div>
+                </div>    
 
-   </div>
-  </form>
- </form>
+            </div>
+        </form>
+    </form>
 <!-- test -->
  
 </body>

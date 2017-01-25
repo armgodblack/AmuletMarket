@@ -55,7 +55,7 @@ include 'config.php';
     </nav>-->
 <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 sidenav">
+        <div class="col-md-2 col-lg-2 sidenav" style="position: fixed;">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -68,7 +68,7 @@ include 'config.php';
                 <li class="menu"><a href="managetop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
-                <li class="menu"><a href="statistic.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="reportmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Market</a></li>
                 <li class="menu"><a href="reportshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="reporttopshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
@@ -79,13 +79,13 @@ include 'config.php';
     
     
     
-
+<div class="col-md-2"></div>
     <form name="addshop" action="savetop10shop.php" method="post" enctype="multipart/form-data">
 	<form class="form-addShop">
             <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Top 10 Shop : </font></span><br><br>
 		<div class="form-addShop">
                     <div class="row">
-                        <div class="col-sm-3"></div>
+                        <div class="col-sm-5"></div>
                         <div class="col-sm-3">
                             
                             
@@ -119,7 +119,9 @@ include 'config.php';
                         <input class="form-control" type="text" value="" name="Facebook" id="Facebook" placeholder="facebook"/><br>
                         <input class="form-control" type="text" value="" name="Line1" id="Line1" placeholder="line"/><br>
                         <textarea class="form-control" maxlength="200" value="" name="Detail_Shop" id="Detail_Shop" placeholder="รายละเอียดของร้านค้า"></textarea><br>
-                        <input type="file" value="" name="Picture_Shop" id="Picture_Shop" placeeholder="รูปร้านค้า"/><br>
+                        
+                        <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
+                        <input type="file" value="" name="Picture_Shop" id="Picture_Shop" placeeholder="รูปร้านค้า"/><br><br><br><br>
                         
 			</div>
                         <div class="col-sm-4"></div>

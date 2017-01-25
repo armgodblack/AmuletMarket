@@ -54,7 +54,7 @@ include 'config.php';
 <body>
 <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 sidenav">
+        <div class="col-md-2 col-lg-2 sidenav" style="position: fixed;">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -67,7 +67,7 @@ include 'config.php';
                 <li class="menu"><a href="managetop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
-                <li class="menu"><a href="statistic.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="reportmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Market</a></li>
                 <li class="menu"><a href="reportshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="reporttopshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
@@ -76,11 +76,11 @@ include 'config.php';
         </div>
     </form>
 
-
+<div class="col-md-2"></div>
  <form action="saveImageAmulet.php" method="post" enctype="multipart/form-data">
   <form class="form-addamulet">
       <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Amulet : </font></span><br><br>
-   <div class="col-sm-3"></div>
+   <div class="col-sm-5"></div>
    <div class="col-md-3 form-addamulet">
        <input class="form-control" type="text" value="" name="txtNameLP" id="txtNameLP" placeholder="ชื่อหลวงพ่อ / พระเกจิ" autofocus=""><br>
 
@@ -118,7 +118,7 @@ include 'config.php';
         
         <img id="img1" name="img1" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
         <span style="color:white; text-align:center;"><font size="4">Back Amulet</font></span>
-        <input type="file"  name="BackPicture" OnChange="Preview(this)"/><br>
+        <input type="file"  name="BackPicture" OnChange="Preview(this)"/><br><br><br><br>
         
 
     

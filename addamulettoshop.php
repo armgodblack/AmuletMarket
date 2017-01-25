@@ -50,7 +50,7 @@ include 'config.php';
 <body> 
 <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 sidenav">
+        <div class="col-md-2 col-lg-2 sidenav" style="position: fixed;">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -63,7 +63,7 @@ include 'config.php';
                 <li class="menu"><a href="managetop10shop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopShop</a></li>
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
-                <li class="menu"><a href="statistic.php"><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
+                <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
                 <li class="menu"><a href="reportmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Market</a></li>
                 <li class="menu"><a href="reportshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
                 <li class="menu"><a href="reporttopshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
@@ -74,13 +74,13 @@ include 'config.php';
     
     
     
-
+<div class="col-md-2"></div>
     <form name="" action="saveamulettoshop.php" method="post" enctype="multipart/form-data">
     <form class="form-addShop">
         <div class="form-addShop">
                     <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Amulet To Shop : </font></span><br><br>
                     <div class="row">
-                        <div class="col-sm-3"></div>
+                        <div class="col-sm-5"></div>
                         
                         <div class="col-sm-3">
 
@@ -150,10 +150,10 @@ include 'config.php';
                         <input class="form-control" type="text" value="" name="NameAmulet10" id="NameAmulet9" placeholder="ชื่อพระเครื่อง"/><br>
                         <input class="form-control" type="text" value="" name="GenAmulet10" id="GenAmulet10" placeholder="ชื่อรุ่น/ปี"/><br/>
                        
-            </div>
-                        <div class="col-sm-4"></div>
-                    </div>
-        
+                        </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            <br><br><br><br>
         
         
 

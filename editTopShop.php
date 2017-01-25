@@ -65,7 +65,7 @@ if($_REQUEST['ID_Shop'] != "")
 <body>
    <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2  sidenav">
+        <div class="col-md-2 col-lg-2  sidenav" style="position: fixed;">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -79,70 +79,76 @@ if($_REQUEST['ID_Shop'] != "")
                 <li class="menu"><a href="top10amulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Manage TopAmulet</a></li>
                 
                 <li class="menu"><a href=""><img src="news-paper.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;Statistic</strong></a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
-                <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
+                <li class="menu"><a href="reportmarket.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Market</a></li>
+                <li class="menu"><a href="reportshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report Shop</a></li>
+                <li class="menu"><a href="reporttopshop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopShop</a></li>
+                <li class="menu"><a href="reporttopamulet.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report TopAmulet</a></li>
             </ul>
         </div>
     </form>
 
-
+<div class="col-md-2"></div>
     <form name="addshop" action="saveEdittop10shop.php" method="post" enctype="multipart/form-data">
       <form class="form-addShop">
           <span style="color:white; "><font size="6">&nbsp;&nbsp;Edit TopShop : </font></span><br><br>
           
          <div class="form-addShop">
             <div class="row">
-                <div class="col-sm-3"></div>
+                <div class="col-sm-5"></div>
                     <div class="col-sm-3">
-                           
-            ID  <input type="text" value="<?=$row_show['ID_Shop']?>"  name="idA"  readonly /><br><br>
+                        
+                        <span style="color:white; text-align:center;"><font size="3">ID</font></span>
+                        <input type="text" value="<?=$row_show['ID_Shop']?>"  name="idA"  readonly /><br><br>
 
-            <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
-            <span style="color:white; text-align:center;"><font size="4">Logo Shop</font></span>
-            <input  type="file" value="" name="Img_Logo" id="Img_Logo" OnChange="Preview(this)" placeholder="รูปโลโก้ร้านค้า"/><br>
+                        <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
+                        <span style="color:white; text-align:center;"><font size="4">Logo Shop</font></span>
+                        <input  type="file" value="" name="Img_Logo" id="Img_Logo" OnChange="Preview(this)" placeholder="รูปโลโก้ร้านค้า"/><br>
 
-            ชื่อร้าน<input class="form-control" type="text" value="<?=$row_show['Name_Shop']?>" name="Name_Shop1" id="Name_Shop"  /><br>
-            ชื่อเจ้าของพระ<input class="form-control" type="text" value="<?=$row_show['Name_Owner']?>" name="Name_Owner" id="Name_Owner" /><br>
+                        <span style="color:white; text-align:center;"><font size="3">ชื่อร้าน</font></span>
+                        <input class="form-control" type="text" value="<?=$row_show['Name_Shop']?>" name="Name_Shop1" id="Name_Shop"  /><br>
+            
+                        <span style="color:white; text-align:center;"><font size="3">ชื่อเจ้าของพระ</font></span>
+                        <input class="form-control" type="text" value="<?=$row_show['Name_Owner']?>" name="Name_Owner" id="Name_Owner" /><br>
 
-            <select class="form-control" name="MarketAmuletShop" width="50">
+                        <select class="form-control" name="MarketAmuletShop" width="50">
                             <option value=""><-- กรุณาเลือกสถานที่ --></option>
-                    <?php
-                    $strSQL = "SELECT * FROM  market ORDER BY id_amuletmarket ASC";
-                    $objQuery = mysql_query($strSQL);
-                    while($objResuut = mysql_fetch_array($objQuery))
-                    {
-                        ?>
-                        <option value="<?php echo $objResuut["id_amuletmarket"];?>"><?php echo $objResuut["Name_Market"];?></option>
-                        <?php
-                    }
-                    ?>
-            </select><br>
+                                <?php
+                                    $strSQL = "SELECT * FROM  market ORDER BY id_amuletmarket ASC";
+                                    $objQuery = mysql_query($strSQL);
+                                    while($objResuut = mysql_fetch_array($objQuery))
+                                    {
+                                ?>
+                                    <option value="<?php echo $objResuut["id_amuletmarket"];?>"><?php echo $objResuut["Name_Market"];?></option>
+                                <?php
+                                    }
+                                ?>
+                        </select><br>
 
-            เบอร์โทรร้าน<input class="form-control" type="text" value="<?=$row_show['Phone']?>" name="Phone" id="Phone" /><br>
-            Facebook<input class="form-control" type="text" value="<?=$row_show['Facebook']?>" name="Facebook" id="Facebook" /><br>
-            Line<input class="form-control" type="text" value="<?=$row_show['Line']?>" name="Line1" id="Line1" /><br>
-            รายละเอียดร้าน<textarea class="form-control" maxlength="200" value="<?=$row_show['Detail_Shop']?>" name="Detail_Shop" id="Detail_Shop" ></textarea><br>
-            <span style="color:white; text-align:center;"><font size="4">รูปหน้าร้าน</font></span><input type="file" value="" name="Picture_Shop" id="Picture_Shop" /><br>
+                        <span style="color:white; text-align:center;"><font size="3">เบอร์โทรร้าน</font></span>
+                        <input class="form-control" type="text" value="<?=$row_show['Phone']?>" name="Phone" id="Phone" /><br>
+                        
+                        <span style="color:white; text-align:center;"><font size="3">Facebook</font></span>
+                        <input class="form-control" type="text" value="<?=$row_show['Facebook']?>" name="Facebook" id="Facebook" /><br>
+                        
+                        <span style="color:white; text-align:center;"><font size="3">Line</font></span>
+                        <input class="form-control" type="text" value="<?=$row_show['Line']?>" name="Line1" id="Line1" /><br>
+                        
+                        <span style="color:white; text-align:center;"><font size="3">รายละเอียดร้าน</font></span>
+                        <textarea class="form-control" maxlength="200" value="<?=$row_show['Detail_Shop']?>" name="Detail_Shop" id="Detail_Shop" ></textarea><br>
+                        
+                        <img id="img" name="img" src="" alt="" style="width: 100px; height: 100px; margin-bottom: 20px" align="left"/><br><br>&nbsp;&nbsp;&nbsp;
+                        <span style="color:white; text-align:center;"><font size="4">รูปหน้าร้าน</font></span>
+                        <input type="file" value="" name="Picture_Shop" id="Picture_Shop" /><br><br><br><br>
 
-
-        <!-- <button type="submit" name="submit">submit</button> -->
-        <div class="navbar navbar-inverse navbar-fixed-bottom">
-                <div class="col-sm-4"></div>
-                <div class="buttonsubmit col-sm-4" align="right">
-                <button type="submit" name="submit" class="btn btn-danger">Edit</button>&nbsp;&nbsp;&nbsp;
-                <a href="managetop10shop.php"<button type="reset" class="btn btn-danger">Cancel</button></a>
+                <!-- <button type="submit" name="submit">submit</button> -->
+                <div class="navbar navbar-inverse navbar-fixed-bottom">
+                    <div class="col-sm-4"></div>
+                        <div class="buttonsubmit col-sm-4" align="right">
+                            <button type="submit" name="submit" class="btn btn-danger">Edit</button>&nbsp;&nbsp;&nbsp;
+                            <a href="managetop10shop.php"<button type="reset" class="btn btn-danger">Cancel</button></a>
+                        </div>
+                    <div class="col-sm-4"></div>
                 </div>
-                <div class="col-sm-4"></div>
-        </div>
-
-
-
-
-
-
-
-
 
 </form>
 </form>

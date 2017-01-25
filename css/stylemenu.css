@@ -10,7 +10,7 @@
 .sidenav {
     background-color: #607d8b;
     height: 250%;
-    margin-bottom: 0px;
+    margin-bottom: 0px;   
 }
         
 @media screen and (min-width: 1200px) { 
@@ -42,11 +42,11 @@
     border: 1px solid transparent;
 }
 
-.menuhref{
+/*.menuhref{
     padding-left: 0px !important;
     
     ;
-}
+}*/
 
 /*.menu{
     position: fixed;

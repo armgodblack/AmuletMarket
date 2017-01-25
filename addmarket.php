@@ -72,7 +72,7 @@ mysql_close();
 <body>
 <br><br><br><br>
     <form>
-        <div class="col-md-2 col-lg-2 sidenav">
+        <div class="col-md-2 col-lg-2 sidenav" style="position: fixed;">
             <ul class="nav nav-pills nav-stacked ">
                 <li class="menu"><a href="admin_page.php"><img src="supermarket.png" width="30px" height="30px"/><strong>&nbsp;&nbsp;&nbsp;ManageShop</strong></a></li>
                 <li class="menu"><a href="addShop.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Shop</a></li>
@@ -93,11 +93,12 @@ mysql_close();
             </ul>
         </div>
     </form>
-    
+
+<div class="col-md-2"></div>
 	<form action="addmarket.php" method="post" >
 		<form class="form-addmarket " >
                     <span style="color:white; "><font size="6">&nbsp;&nbsp;Add Market : </font></span><br><br>
-                    <div class="col-md-3"></div>
+                    <div class="col-md-5"></div>
 			<div class="form-addmerket col-md-3" >
                             <input class="form-control" type="text" value="" name="txtNameMarket" id="txtNameMarket" placeholder="ชื่อตลาดพระเครื่อง" autofocus="" /><br>
                             <input class="form-control" type="text" name="txtaddress" id="txtaddress" placeholder="ที่อยู่" /><br>
@@ -115,10 +116,11 @@ mysql_close();
                             <span style="color:white; text-align:center;"><font size="4">Latitude</font></span>
 				<input class="form-control" name="lat_value" type="text" id="lat_value" value="0"/><br>
                             <span style="color:white; text-align:center;"><font size="4">Longitude</font></span>
-				<input class="form-control" name="lon_value" type="text" id="lon_value" value="0"/><br/><br/>
+                                <input class="form-control" name="lon_value" type="text" id="lon_value" value="0"/><br><br><br><br><br>
                                 
                         </div>
                         <div class="col-sm-4"></div>
+                        
                         
                         <!--Footer tag-->
 			<div class="navbar navbar-inverse navbar-fixed-bottom">

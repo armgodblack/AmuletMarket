@@ -106,6 +106,18 @@ include 'config.php';
 
 	</table>
     <div class="col-md-2"></div>
-	<span  style="color:#FFFF00; text-align:center;"><font size="4">Export to Excel file Click <a href="pdfReporttopshop.php">here</a> to Download</font></span>
-</body>
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="col-md-2"></div>
+            <div class="col-sm-4"></div>
+                <div class="buttonsubmit col-sm-4" align="right">
+                    <a href="pdfReporttopshop.php">
+                    <button type="button" class="btn btn-default btn btn-success">
+                        <span class="glyphicon glyphicon-print" aria-hidden="true"> Flie Excel </span>
+                    </button>
+                    </a>
+                </div>
+            <div class="col-sm-4"></div>
+        </div>
+    
+    </body>
 </html>

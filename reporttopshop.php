@@ -105,6 +105,8 @@ include 'config.php';
 		</tbody>
 
 	</table>
+<br><br><br><br><br>    
+    
     <div class="col-md-2"></div>
 	<div class="navbar navbar-inverse navbar-fixed-bottom">
             <div class="col-md-2"></div>
